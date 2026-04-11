@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'Atelier de Margaux — Fleuriste artisanale a Bordeaux, specialiste de la pivoine. Bouquets sur mesure, compositions evenementielles, abonnements floraux.">
+  <title>L'Atelier de Margaux — Specialiste de la Pivoine a Bordeaux</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header" id="header">
+    <nav class="nav-container">
+      <a href="#" class="nav-logo">L'Atelier de Margaux</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#creations">Creations</a></li>
+        <li><a href="#histoire">Notre histoire</a></li>
+        <li><a href="#engagement">Engagement</a></li>
+        <li><a href="#avis">Temoignages</a></li>
+        <li><a href="#newsletter" class="nav-cta">S'abonner</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ====== HERO — asymmetric split ====== -->
+  <section class="hero" id="hero">
+    <div class="hero__col hero__text">
+      <span class="hero__badge">&#10047; Specialiste pivoines depuis 2016</span>
+      <h1 class="hero__title">L'art de la<br><em>pivoine</em></h1>
+      <p class="hero__subtitle">Bouquets d'exception, compositions sur mesure et abonnements floraux. Chaque creation est une ode a la reine des fleurs.</p>
+      <div class="hero__actions">
+        <a href="#creations" class="btn btn--primary">Decouvrir nos creations</a>
+        <a href="#histoire" class="btn btn--outline">Notre histoire &rarr;</a>
+      </div>
+    </div>
+    <div class="hero__col hero__visual">
+      <div class="hero__img-wrapper">
+        <img src="https://images.pexels.com/photos/8051675/pexels-photo-8051675.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop" alt="Pivoine rose en pleine floraison">
+      </div>
+      <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+      <div class="hero__float-card" aria-hidden="true">
+        <span class="float-card__number">2000+</span>
+        <span class="float-card__label">bouquets livres</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CATEGORIES — horizontal scroll ====== -->
+  <section class="categories">
+    <div class="container">
+      <div class="categories__track">
+        <a href="#creations" class="cat-card">
+          <div class="cat-card__img">
+            <img src="https://images.pexels.com/photos/8051675/pexels-photo-8051675.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Bouquets" loading="lazy">
+          </div>
+          <span class="cat-card__label">Bouquets</span>
+        </a>
+        <a href="#creations" class="cat-card">
+          <div class="cat-card__img">
+            <img src="https://images.pexels.com/photos/4616965/pexels-photo-4616965.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Compositions" loading="lazy">
+          </div>
+          <span class="cat-card__label">Compositions</span>
+        </a>
+        <a href="#creations" class="cat-card">
+          <div class="cat-card__img">
+            <img src="https://images.pexels.com/photos/12615497/pexels-photo-12615497.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Mariages" loading="lazy">
+          </div>
+          <span class="cat-card__label">Mariages</span>
+        </a>
+        <a href="#creations" class="cat-card">
+          <div class="cat-card__img">
+            <img src="https://images.pexels.com/photos/17557218/pexels-photo-17557218.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Abonnements" loading="lazy">
+          </div>
+          <span class="cat-card__label">Abonnements</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CREATIONS — bento grid ====== -->
+  <section class="section creations" id="creations">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <h2 class="section-header__title">Nos creations</h2>
+        <p class="section-header__sub">Chaque bouquet est compose a la main avec des pivoines selectionnees pour leur beaute et leur fraicheur.</p>
+      </div>
+
+      <div class="bento">
+        <!-- Large featured card -->
+        <article class="bento__item bento__item--featured">
+          <div class="bento__img">
+            <img src="https://images.pexels.com/photos/8051675/pexels-photo-8051675.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop" alt="Bouquet de Pivoines" loading="lazy">
+          </div>
+          <div class="bento__overlay">
+            <span class="bento__tag">Signature</span>
+            <h3 class="bento__name">Bouquet de Pivoines</h3>
+            <p class="bento__desc">Rose poudre, blanc nacre, corail ou rouge carmin &mdash; choisissez vos teintes.</p>
+            <span class="bento__price">A partir de 45&thinsp;&euro;</span>
+          </div>
+        </article>
+
+        <!-- Smaller cards -->
+        <article class="bento__item">
+          <div class="bento__img">
+            <img src="https://images.pexels.com/photos/4616965/pexels-photo-4616965.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="Composition Pivoine et Saison" loading="lazy">
+          </div>
+          <div class="bento__overlay">
+            <h3 class="bento__name">Pivoine &amp; Saison</h3>
+            <span class="bento__price">A partir de 55&thinsp;&euro;</span>
+          </div>
+        </article>
+
+        <article class="bento__item">
+          <div class="bento__img">
+            <img src="https://images.pexels.com/photos/17557218/pexels-photo-17557218.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="Abonnement Pivoines" loading="lazy">
+          </div>
+          <div class="bento__overlay">
+            <h3 class="bento__name">Abonnement Pivoines</h3>
+            <span class="bento__price">39&thinsp;&euro;/semaine</span>
+          </div>
+        </article>
+
+        <article class="bento__item">
+          <div class="bento__img">
+            <img src="https://images.pexels.com/photos/12615497/pexels-photo-12615497.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="Mariage et Pivoines" loading="lazy">
+          </div>
+          <div class="bento__overlay">
+            <h3 class="bento__name">Mariage &amp; Receptions</h3>
+            <span class="bento__price">Sur devis</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== QUOTE BANNER ====== -->
+  <section class="quote-banner">
+    <div class="container">
+      <blockquote class="quote-banner__text">
+        &laquo;&thinsp;La pivoine, plus que toute autre fleur, porte en elle la poesie d'un instant.&thinsp;&raquo;
+      </blockquote>
+      <p class="quote-banner__author">&mdash; Margaux, fondatrice</p>
+    </div>
+  </section>
+
+  <!-- ====== NOTRE HISTOIRE — image + text offset ====== -->
+  <section class="section histoire" id="histoire">
+    <div class="container">
+      <div class="histoire__layout">
+        <div class="histoire__images">
+          <div class="histoire__img histoire__img--main">
+            <img src="https://images.pexels.com/photos/7693943/pexels-photo-7693943.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop" alt="Bouquet de pivoines roses dans un atelier" loading="lazy">
+          </div>
+          <div class="histoire__img histoire__img--accent">
+            <img src="https://images.pexels.com/photos/10570541/pexels-photo-10570541.jpeg?auto=compress&cs=tinysrgb&w=400&h=350&fit=crop" alt="Pivoine rose en gros plan" loading="lazy">
+          </div>
+        </div>
+        <div class="histoire__text">
+          <h2 class="section-header__title">Notre histoire</h2>
+          <p class="histoire__intro">
+            Tout a commence par une pivoine. Une seule, offerte par sa
+            grand-mere dans le jardin familial bordelais.
+          </p>
+          <p>
+            Apres une formation en art floral a Paris, Margaux a ouvert
+            son atelier en 2016 avec une specialite rare&nbsp;:
+            <strong>la pivoine sous toutes ses formes</strong>. Des varietes
+            anciennes aux hybrides les plus raffines, elle cultive un savoir-faire
+            unique autour de cette reine des fleurs.
+          </p>
+          <p>
+            Nous travaillons avec des producteurs locaux du Sud-Ouest pour
+            proposer des pivoines d'exception&nbsp;&mdash;&nbsp;herbacees,
+            arbustives, Itoh&nbsp;&mdash;&nbsp;dans des teintes allant du
+            blanc nacre au rouge profond.
+          </p>
+          <div class="histoire__stats">
+            <div class="stat">
+              <span class="stat__number">8</span>
+              <span class="stat__label">ans d'expertise</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">30+</span>
+              <span class="stat__label">varietes de pivoines</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">150km</span>
+              <span class="stat__label">circuit court</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ENGAGEMENT — horizontal cards ====== -->
+  <section class="section engagement" id="engagement">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2 class="section-header__title section-header__title--light">Notre engagement</h2>
+        <p class="section-header__sub section-header__sub--light">Une demarche eco-responsable au coeur de notre metier</p>
+      </div>
+      <div class="engagement__grid">
+        <div class="engage-card">
+          <div class="engage-card__icon">&#9728;</div>
+          <h3 class="engage-card__title">Fleurs de saison</h3>
+          <p class="engage-card__text">Nous travaillons exclusivement avec des fleurs de saison, respectant le rythme naturel des floraisons.</p>
+        </div>
+        <div class="engage-card">
+          <div class="engage-card__icon">&#9906;</div>
+          <h3 class="engage-card__title">Circuit court</h3>
+          <p class="engage-card__text">Nos fleurs proviennent de producteurs locaux, dans un rayon de 150&nbsp;km autour de Bordeaux.</p>
+        </div>
+        <div class="engage-card">
+          <div class="engage-card__icon">&#9752;</div>
+          <h3 class="engage-card__title">Zero plastique</h3>
+          <p class="engage-card__text">Tous nos emballages sont en papier kraft, tissu ou materiaux compostables depuis 2019.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PHOTO BREAK ====== -->
+  <div class="photo-break">
+    <img src="https://images.pexels.com/photos/17501318/pexels-photo-17501318.jpeg?auto=compress&cs=tinysrgb&w=1400&h=400&fit=crop" alt="Pivoines dans un vase en verre" loading="lazy">
+  </div>
+
+  <!-- ====== TEMOIGNAGES — carousel-style ====== -->
+  <section class="section avis" id="avis">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2 class="section-header__title">Ce que disent nos clients</h2>
+      </div>
+      <div class="avis__track">
+        <blockquote class="avis-card">
+          <div class="avis-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="avis-card__text">
+            Margaux a realise notre reve&nbsp;: un mariage tout en pivoines
+            blanches et rose poudre. Du bouquet aux centres de table, c'etait
+            ferique. Nos invites en parlent encore&nbsp;!
+          </p>
+          <footer class="avis-card__author">
+            <div class="avis-card__avatar">C&A</div>
+            <div>
+              <span class="avis-card__name">Claire &amp; Antoine</span>
+              <span class="avis-card__role">Mariage, Septembre 2025</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <blockquote class="avis-card">
+          <div class="avis-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="avis-card__text">
+            L'abonnement pivoines est un bonheur hebdomadaire. Margaux
+            deniche des varietes que je n'avais jamais vues&nbsp;: Coral
+            Charm, Sarah Bernhardt, Bowl of Beauty...
+          </p>
+          <footer class="avis-card__author">
+            <div class="avis-card__avatar">SM</div>
+            <div>
+              <span class="avis-card__name">Sophie M.</span>
+              <span class="avis-card__role">Abonnement hebdomadaire</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <blockquote class="avis-card">
+          <div class="avis-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="avis-card__text">
+            Pour notre boutique, Margaux a imagine une installation de
+            pivoines suspendues absolument spectaculaire. Un vrai
+            savoir-faire d'exception.
+          </p>
+          <footer class="avis-card__author">
+            <div class="avis-card__avatar">TD</div>
+            <div>
+              <span class="avis-card__name">Thomas D.</span>
+              <span class="avis-card__role">Scenographie boutique</span>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== NEWSLETTER ====== -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter__inner">
+        <div class="newsletter__text">
+          <h2 class="newsletter__title">Restez inspires</h2>
+          <p class="newsletter__sub">Recevez nos nouveautes, conseils d'entretien et offres exclusives directement dans votre boite mail.</p>
+        </div>
+        <form class="newsletter__form" action="#" method="post">
+          <input type="email" placeholder="votre@email.com" required aria-label="Adresse email">
+          <button type="submit" class="btn btn--primary">S'inscrire</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== INFO BAR ====== -->
+  <section class="info-bar">
+    <div class="container">
+      <div class="info-bar__grid">
+        <div class="info-item">
+          <strong>Adresse</strong>
+          <p>12, rue Sainte-Catherine<br>33000 Bordeaux</p>
+        </div>
+        <div class="info-item">
+          <strong>Telephone</strong>
+          <p><a href="tel:+33556123456">05 56 12 34 56</a></p>
+        </div>
+        <div class="info-item">
+          <strong>Horaires</strong>
+          <p>Mar&ndash;Sam : 9h&ndash;19h<br>Dim : 9h&ndash;13h</p>
+        </div>
+        <div class="info-item">
+          <strong>Instagram</strong>
+          <p><a href="https://instagram.com/atelierdemargaux" target="_blank" rel="noopener noreferrer">@atelierdemargaux</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 L'Atelier de Margaux &mdash; Site realise par <strong>Kairo</strong></p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('navToggle');
+      var links = document.getElementById('navLinks');
+      var header = document.getElementById('header');
+
+      toggle.addEventListener('click', function() {
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !expanded);
+        links.classList.toggle('nav-links--open');
+        toggle.classList.toggle('nav-toggle--open');
+      });
+
+      links.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          links.classList.remove('nav-links--open');
+          toggle.classList.remove('nav-toggle--open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      window.addEventListener('scroll', function() {
+        header.classList.toggle('site-header--scrolled', window.scrollY > 60);
+      });
+    })();
+  </script>
+
+</body>
+</html>
