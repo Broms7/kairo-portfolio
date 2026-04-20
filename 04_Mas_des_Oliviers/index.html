@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le Mas des Oliviers — Gite de charme en Provence. Sejours authentiques au coeur des lavandes et des oliviers.">
+  <title>Le Mas des Oliviers — Gite de charme en Provence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo"><span>&#10047;</span> Le Mas des Oliviers</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="nav__links" id="navLinks">
+        <a href="#about">Le Domaine</a>
+        <a href="#rooms">Hebergements</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#reviews">Avis</a>
+        <a href="#contact" class="nav__cta">Reserver</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO — large text + scattered images ===== -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="https://images.pexels.com/photos/12990946/pexels-photo-12990946.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop" alt="Lavande en Provence">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Gite de charme &bull; Luberon, Provence</p>
+      <h1 class="hero__title">Trouvez votre<br><em>escapade</em> parfaite.</h1>
+      <p class="hero__sub">Un mas du XVIII<sup>e</sup> siecle niché entre oliviers centenaires et champs de lavande, a deux pas de Gordes.</p>
+      <div class="hero__actions">
+        <a href="#rooms" class="btn btn--gold">Decouvrir les gites</a>
+        <a href="#about" class="btn btn--ghost">Notre histoire &darr;</a>
+      </div>
+    </div>
+    <!-- Floating stat cards on hero -->
+    <div class="hero__cards">
+      <div class="hero__card">
+        <span class="hero__card-num">4.9</span>
+        <span class="hero__card-label">&#9733; Google</span>
+      </div>
+      <div class="hero__card">
+        <span class="hero__card-num">150+</span>
+        <span class="hero__card-label">oliviers centenaires</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <div class="trust-bar">
+    <div class="trust-bar__inner">
+      <div class="trust-item">
+        <span class="trust-item__icon">&#9752;</span>
+        <span>Eco-responsable</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__icon">&#10003;</span>
+        <span>Annulation gratuite</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__icon">&#9733;</span>
+        <span>Hote Superstar</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__icon">&#9829;</span>
+        <span>Accueil personnalise</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT — asymmetric overlapping images + text ===== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about__layout">
+        <div class="about__text">
+          <span class="label">Notre histoire</span>
+          <h2 class="title-lg">A propos du<br><em>Mas des Oliviers</em></h2>
+          <p class="about__lead">Ancien mas provencal restaure avec passion, notre domaine vous accueille dans un ecrin de nature preservee depuis 2012.</p>
+          <p>Sur 3 hectares, decouvrez une oliveraie centenaire, un potager bio dont vous pourrez cueillir les legumes, une piscine a debordement chauffee et des terrasses ombragees ou le temps s'arrete.</p>
+          <p>Ici, on ecoute les cigales, on regarde le soleil se coucher sur les monts de Vaucluse, et on repart avec des souvenirs plein la tete.</p>
+          <a href="#rooms" class="btn btn--dark">Explorer les gites &rarr;</a>
+        </div>
+        <div class="about__gallery">
+          <div class="about__img about__img--1">
+            <img src="https://images.pexels.com/photos/5824518/pexels-photo-5824518.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop" alt="Interieur gite charme">
+          </div>
+          <div class="about__img about__img--2">
+            <img src="https://images.pexels.com/photos/6032280/pexels-photo-6032280.jpeg?auto=compress&cs=tinysrgb&w=450&h=320&fit=crop" alt="Piscine du mas">
+          </div>
+          <div class="about__img about__img--3">
+            <img src="https://images.pexels.com/photos/33168420/pexels-photo-33168420.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Oliveraie">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
+  <div class="container">
+    <div class="feature-grid">
+      
+      <div class="feature-block feature-block--img reveal">
+        <img src="https://images.pexels.com/photos/3315291/pexels-photo-3315291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Piscine du domaine">
+      </div>
+      <div class="feature-block feature-block--text reveal">
+        <span class="label">Équipements</span>
+        <h3>Piscine & Jardin</h3>
+        <p>Profitez de notre bassin chauffé entouré d'oliviers centenaires, idéal pour se rafraîchir sous le soleil de Provence.</p>
+      </div>
+
+      <div class="feature-block feature-block--center reveal">
+        <h2 class="title-lg title-lg--light">Plongez dans<br><em>l'élégance</em></h2>
+        <p>Un sanctuaire de paix où chaque détail a été pensé pour votre confort absolu et votre sérénité.</p>
+        <a href="#contact" class="btn btn--gold">Réservez maintenant</a>
+      </div>
+
+      <div class="feature-block feature-block--text reveal">
+        <span class="label">Gastronomie</span>
+        <h3>Table d'hôtes</h3>
+        <p>Découvrez les saveurs locales avec notre petit-déjeuner gourmand et nos dîners composés de produits frais du marché.</p>
+      </div>
+      <div class="feature-block feature-block--img reveal">
+        <img src="https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Petit-déjeuner provençal">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ===== WHY US — big stats + image ===== -->
+  <section class="why">
+    <div class="why__image">
+      <img src="https://images.pexels.com/photos/29042111/pexels-photo-29042111.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Champs de lavande au coucher du soleil">
+    </div>
+    <div class="why__content">
+      <span class="label label--light">Pourquoi nous choisir</span>
+      <h2 class="title-lg title-lg--light">Une experience<br><em>inoubliable</em></h2>
+      <div class="why__stats">
+        <div class="why__stat">
+          <span class="why__stat-num">12</span>
+          <span class="why__stat-label">ans d'experience</span>
+        </div>
+        <div class="why__stat">
+          <span class="why__stat-num">5</span>
+          <span class="why__stat-label">gites de charme</span>
+        </div>
+        <div class="why__stat">
+          <span class="why__stat-num">2k+</span>
+          <span class="why__stat-label">voyageurs accueillis</span>
+        </div>
+        <div class="why__stat">
+          <span class="why__stat-num">98%</span>
+          <span class="why__stat-label">recommandent</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROOMS — overlapping image cards with tags ===== -->
+  <section class="section rooms" id="rooms">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Nos hebergements</span>
+        <h2 class="title-lg">Votre sejour,<br><em>notre service</em></h2>
+        <p class="section-header__sub">Cinq gites de caractere, restaures dans le respect de la tradition provencale avec tout le confort moderne.</p>
+      </div>
+
+      <div class="rooms-showcase">
+        <article class="room-card room-card--large">
+          <div class="room-card__img">
+            <img src="https://images.pexels.com/photos/5824518/pexels-photo-5824518.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Gite L'Olivier">
+            <div class="room-card__tags">
+              <span class="tag tag--olive">Coup de coeur</span>
+              <span class="tag">2-4 pers.</span>
+            </div>
+          </div>
+          <div class="room-card__info">
+            <h3>L'Olivier</h3>
+            <p>Vue panoramique sur l'oliveraie, terrasse privee, cheminee en pierre de taille et decoration soignee.</p>
+            <div class="room-card__bottom">
+              <span class="room-card__price">140&euro;<small>/nuit</small></span>
+              <a href="#contact" class="room-card__link">Reserver &nearr;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card">
+          <div class="room-card__img">
+            <img src="https://images.pexels.com/photos/15699340/pexels-photo-15699340.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" alt="Gite La Lavande">
+            <div class="room-card__tags">
+              <span class="tag tag--terra">Romantique</span>
+            </div>
+          </div>
+          <div class="room-card__info">
+            <h3>La Lavande</h3>
+            <p>Cocon intime, poutres apparentes et vue sur les champs de lavande.</p>
+            <div class="room-card__bottom">
+              <span class="room-card__price">120&euro;<small>/nuit</small></span>
+              <a href="#contact" class="room-card__link">Reserver &nearr;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card">
+          <div class="room-card__img">
+            <img src="https://images.pexels.com/photos/34443387/pexels-photo-34443387.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" alt="Gite Le Figuier">
+            <div class="room-card__tags">
+              <span class="tag tag--gold">Familial</span>
+              <span class="tag">4-6 pers.</span>
+            </div>
+          </div>
+          <div class="room-card__info">
+            <h3>Le Figuier</h3>
+            <p>Spacieux, jardin privatif, ideal en famille. Cuisine equipee.</p>
+            <div class="room-card__bottom">
+              <span class="room-card__price">180&euro;<small>/nuit</small></span>
+              <a href="#contact" class="room-card__link">Reserver &nearr;</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FULL-WIDTH IMAGE BREAK with text ===== -->
+  <section class="parallax-break">
+    <img src="https://images.pexels.com/photos/29042030/pexels-photo-29042030.jpeg?auto=compress&cs=tinysrgb&w=1600&h=600&fit=crop" alt="Lavande au coucher du soleil">
+    <div class="parallax-break__overlay"></div>
+    <div class="parallax-break__content">
+      <span class="label label--light">Experiences &amp; activites</span>
+      <h2 class="title-lg title-lg--light">Moments &amp;<br><em>emotions</em></h2>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCES — staggered cards ===== -->
+  <section class="section experiences" id="experiences">
+    <div class="container">
+      <div class="exp-mosaic">
+        <div class="exp-tile exp-tile--tall">
+          <div class="exp-tile__inner">
+            <span class="exp-tile__num">01</span>
+            <h3 class="exp-tile__title">Degustation d'huile d'olive</h3>
+            <p class="exp-tile__text">Visite de l'oliveraie et degustation de notre production maison avec un sommelier.</p>
+          </div>
+        </div>
+        <div class="exp-tile">
+          <div class="exp-tile__inner exp-tile__inner--olive">
+            <span class="exp-tile__num">02</span>
+            <h3 class="exp-tile__title">Randonnee dans le Luberon</h3>
+            <p class="exp-tile__text">Sentiers a travers les villages perches, les gorges et les champs de lavande.</p>
+          </div>
+        </div>
+        <div class="exp-tile">
+          <div class="exp-tile__inner exp-tile__inner--terra">
+            <span class="exp-tile__num">03</span>
+            <h3 class="exp-tile__title">Cuisine provencale</h3>
+            <p class="exp-tile__text">Ratatouille, tapenade, aioli... apprenez avec les legumes du potager bio.</p>
+          </div>
+        </div>
+        <div class="exp-tile exp-tile--wide">
+          <div class="exp-tile__inner exp-tile__inner--img">
+            <img src="https://images.pexels.com/photos/29887388/pexels-photo-29887388.jpeg?auto=compress&cs=tinysrgb&w=700&h=350&fit=crop" alt="Table provencale">
+            <div class="exp-tile__img-overlay">
+              <span class="exp-tile__num">04</span>
+              <h3 class="exp-tile__title">Marches &amp; villages</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS — dark section with cards ===== -->
+  <section class="section reviews" id="reviews">
+    <div class="reviews__bg">
+      <img src="https://images.pexels.com/photos/33486886/pexels-photo-33486886.jpeg?auto=compress&cs=tinysrgb&w=1600&h=700&fit=crop" alt="Lavande Provence">
+    </div>
+    <div class="reviews__overlay"></div>
+    <div class="container reviews__container">
+      <div class="section-header section-header--center">
+        <span class="label label--light">Temoignages</span>
+        <h2 class="title-lg title-lg--light">Ce que disent<br><em>nos voyageurs</em></h2>
+      </div>
+      <div class="reviews-grid">
+        <blockquote class="review-card">
+          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&laquo;&thinsp;Un lieu magique, hors du temps. Le gite L'Olivier est une pure merveille. On reviendra chaque ete&nbsp;!&thinsp;&raquo;</p>
+          <footer>
+            <strong>Marie &amp; Jean-Luc</strong>
+            <span>Lyon &mdash; Aout 2025</span>
+          </footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&laquo;&thinsp;Les enfants ont adore le potager et la piscine. Un accueil chaleureux et un cadre exceptionnel.&thinsp;&raquo;</p>
+          <footer>
+            <strong>Famille Durand</strong>
+            <span>Paris &mdash; Juillet 2025</span>
+          </footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&laquo;&thinsp;Le cours de cuisine etait incroyable. Nous sommes repartis avec des recettes et des souvenirs.&thinsp;&raquo;</p>
+          <footer>
+            <strong>Stefan &amp; Ingrid</strong>
+            <span>Berlin &mdash; Juin 2025</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA / NEWSLETTER ===== -->
+<section class="section cta" id="contact">
+  <div class="container">
+    <div class="cta__layout">
+      
+      <div class="cta__left">
+        <span class="label">Réservation</span>
+        <h2 class="title-lg">Réservez votre <em>escapade</em></h2>
+        <p>Remplissez ce formulaire et nous vous recontacterons sous 24h pour confirmer vos dates.</p>
+        
+        <form class="booking-form" id="bookingForm">
+          
+          <div class="form-group">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" placeholder="Ex: Jean Dupont" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date_arrivee">Date d'arrivée</label>
+              <input type="date" id="date_arrivee" required min="2026-04-11">
+            </div>
+            <div class="form-group">
+              <label for="heure_arrivee">Heure estimée</label>
+              <input type="time" id="heure_arrivee" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gite">Choix du gîte</label>
+              <select id="gite" required>
+                <option value="" disabled selected>Sélectionnez...</option>
+                <option value="olivier">L'Olivier</option>
+                <option value="lavande">La Lavande</option>
+                <option value="figuier">Le Figuier</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="personnes">Personnes</label>
+              <input type="number" id="personnes" placeholder="Ex: 2" min="1" max="6" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--gold booking-form__submit">Vérifier la disponibilité</button>
+        </form>
+        <div id="confirmationMessage" style="display:none; margin-top: 20px; padding: 20px; background: var(--cream); border-left: 4px solid var(--gold); border-radius: var(--radius); color: var(--brown);">
+          <p><strong>Merci !</strong> Votre demande a été envoyée avec succès. Nous vous répondrons très bientôt.</p>
+        </div>
+      </div>
+
+      <div class="cta__right">
+        <div class="cta__info-card reveal">
+          <h3>Coordonnees</h3>
+          <p><strong>☎</strong> <a href="tel:+33490123456">04 90 12 34 56</a></p>
+          <p><strong>✉</strong> <a href="mailto:bonjour@masdesoliviers.fr">bonjour@masdesoliviers.fr</a></p>
+          <p><strong>⚲</strong> Route des Oliviers, 84220 Gordes</p>
+          <div class="cta__hours">
+            <strong>Accueil</strong>
+            <p>Arrivée : 12h — Départ : 10h<br>Accueil 7j/7 de mars a novembre</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">&#10047; Le Mas des Oliviers</span>
+          <p>Gite de charme en Provence &mdash; Gordes, Luberon</p>
+        </div>
+        <div class="footer__links">
+          <a href="#about">Le Domaine</a>
+          <a href="#rooms">Hebergements</a>
+          <a href="#experiences">Experiences</a>
+          <a href="#contact">Reservation</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Le Mas des Oliviers &mdash; Site realise par <strong>Kairo</strong></p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  (function(){
+    // --- 1. GESTION DU MENU ET DU SCROLL ---
+    var t=document.getElementById('navToggle'),
+        l=document.getElementById('navLinks'),
+        h=document.getElementById('header');
+
+    t.addEventListener('click',function(){
+      l.classList.toggle('nav__links--open');
+      t.classList.toggle('nav__toggle--open');
+    });
+
+    l.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        l.classList.remove('nav__links--open');
+        t.classList.remove('nav__toggle--open');
+      });
+    });
+
+    window.addEventListener('scroll',function(){
+      h.classList.toggle('header--scrolled',window.scrollY>80);
+    });
+
+    // --- 2. ANIMATIONS (SCROLL REVEAL) ---
+    var reveals=document.querySelectorAll('.about__img,.room-card,.exp-tile,.review-card,.why__stat,.cta__info-card, .feature-block');
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('revealed');
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:0.15});
+    reveals.forEach(function(el){
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+
+    // --- 3. GESTION DU FORMULAIRE DE RÉSERVATION ---
+    const bookingForm = document.getElementById('bookingForm');
+    const dateInput = document.getElementById('date_arrivee');
+
+    if (dateInput) {
+      // Sécurité : Empêcher la sélection d'une date passée
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+    }
+
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Récupération des nouvelles données (Date et Heure)
+        const data = {
+          nom: document.getElementById('nom').value,
+          email: document.getElementById('email').value,
+          gite: document.getElementById('gite').value,
+          date: document.getElementById('date_arrivee').value,
+          heure: document.getElementById('heure_arrivee').value,
+          personnes: document.getElementById('personnes').value
+        };
+
+        // Validation du nom
+        if (data.nom.length < 3) {
+          alert("Veuillez entrer un nom valide.");
+          return;
+        }
+
+        // Animation de sortie du formulaire et affichage du succès
+        this.style.transition = 'opacity 0.4s ease';
+        this.style.opacity = '0';
+        
+        setTimeout(() => {
+          this.style.display = 'none';
+          const confirmation = document.getElementById('confirmationMessage');
+          
+          // Personnalisation du message de succès
+          confirmation.innerHTML = `
+            <h3>Demande envoyée !</h3>
+            <p>Merci <strong>${data.nom}</strong>. Nous avons bien reçu votre demande pour le gîte <strong>${data.gite}</strong> le <strong>${data.date}</strong> vers <strong>${data.heure}</strong>.</p>
+            <p>Un email de confirmation a été envoyé à <em>${data.email}</em>.</p>
+          `;
+          confirmation.style.display = 'block';
+        }, 400);
+
+        console.log("Réservation complète reçue :", data);
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

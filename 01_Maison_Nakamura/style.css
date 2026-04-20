@@ -1,0 +1,858 @@
+/* ==============================================
+   MAISON NAKAMURA — Style Sheet
+   Design: Dark minimalist Japanese aesthetic
+   Author: Kairo
+   ============================================== */
+
+/* ---------- VARIABLES ---------- */
+:root {
+  --black:    #0a0a0a;
+  --charcoal: #1a1a1a;
+  --warm-white: #f5f0e8;
+  --gold:     #c9a96e;
+  --gold-dim: #a88b52;
+  --text:     #d4cfc6;
+  --text-dim: #8a8580;
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body:    'Inter', 'Helvetica Neue', sans-serif;
+  --ease:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- RESET & BASE ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--black);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s var(--ease);
+}
+
+a:hover {
+  color: var(--warm-white);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- UTILITIES ---------- */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- REVEAL ANIMATION ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children slightly */
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+
+/* ==============================================
+   NAVIGATION
+   ============================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.nav--solid {
+  background: rgba(10, 10, 10, 0.95);
+  box-shadow: 0 1px 0 rgba(201, 169, 110, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+}
+
+.nav__logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-white);
+}
+
+.nav__logo:hover {
+  color: var(--gold);
+}
+
+.nav__links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav__links a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: color 0.3s var(--ease);
+}
+
+.nav__links a:hover {
+  color: var(--warm-white);
+}
+
+/* Burger button — hidden on desktop */
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__burger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--warm-white);
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+.nav__burger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav__burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__burger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ==============================================
+   HERO
+   ============================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Decorative gradient background simulating a moody interior */
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(201, 169, 110, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(201, 169, 110, 0.04) 0%, transparent 50%),
+    linear-gradient(180deg, #0d0d0d 0%, #0a0a0a 40%, #111 100%);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  /* Subtle noise-like texture with repeating gradient */
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(245, 240, 232, 0.008) 2px,
+      rgba(245, 240, 232, 0.008) 4px
+    );
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.hero__kanji {
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-family: var(--font-heading);
+  color: rgba(201, 169, 110, 0.08);
+  line-height: 1;
+  margin-bottom: -1rem;
+  animation: fadeInDown 1.2s var(--ease-out) both;
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--warm-white);
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s 0.3s var(--ease-out) both;
+}
+
+.hero__tagline {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 1s 0.5s var(--ease-out) both;
+}
+
+/* Scroll hint at bottom of hero */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  animation: fadeInUp 1s 1s var(--ease-out) both;
+}
+
+.hero__scroll-hint span {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ==============================================
+   BUTTON
+   ============================================== */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s var(--ease);
+}
+
+.btn--primary {
+  color: var(--black);
+  background: var(--gold);
+}
+
+.btn--primary:hover {
+  background: var(--warm-white);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 169, 110, 0.2);
+}
+
+.btn--full {
+  width: 100%;
+  text-align: center;
+}
+
+/* ==============================================
+   SECTIONS — shared styles
+   ============================================== */
+.section {
+  padding: 7rem 0;
+  position: relative;
+}
+
+.section__label {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3rem;
+}
+
+.section__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--warm-white);
+  margin-bottom: 1.25rem;
+}
+
+.section__subtitle {
+  max-width: 600px;
+  font-size: 1rem;
+  color: var(--text-dim);
+  margin-bottom: 3.5rem;
+}
+
+/* ==============================================
+   PHILOSOPHIE
+   ============================================== */
+.philosophie {
+  background: var(--charcoal);
+}
+
+.philosophie__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.philosophie__text h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  color: var(--warm-white);
+  margin-bottom: 1.5rem;
+}
+
+.philosophie__text p {
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+.philosophie__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--gold);
+  padding-left: 2rem;
+}
+
+.philosophie__quote {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--warm-white);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.philosophie__aside cite {
+  font-style: normal;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ==============================================
+   LA CARTE
+   ============================================== */
+.carte {
+  background: var(--black);
+}
+
+.carte__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.carte__card {
+  background: var(--charcoal);
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  padding: 2.5rem 2rem;
+  display: flex;
+  gap: 1.5rem;
+  transition: border-color 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.carte__card:hover {
+  border-color: rgba(201, 169, 110, 0.3);
+  transform: translateY(-4px);
+}
+
+.carte__card-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(201, 169, 110, 0.15);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.carte__dish-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--warm-white);
+  margin-bottom: 0.25rem;
+}
+
+.carte__dish-sub {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.carte__dish-desc {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.carte__price {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--warm-white);
+}
+
+.carte__footer {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+.carte__footer p {
+  font-size: 1.1rem;
+  color: var(--warm-white);
+}
+
+.carte__footer strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.carte__note {
+  font-size: 0.85rem !important;
+  color: var(--text-dim) !important;
+  margin-top: 0.5rem;
+}
+
+/* ==============================================
+   EXPERIENCE
+   ============================================== */
+.experience {
+  background: var(--charcoal);
+}
+
+.experience__stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.experience__stat {
+  text-align: center;
+}
+
+.experience__stat-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.experience__stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.experience__stat-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(201, 169, 110, 0.3);
+}
+
+/* ==============================================
+   TEMOIGNAGES
+   ============================================== */
+.temoignages {
+  background: var(--black);
+}
+
+.temoignages__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.temoignage {
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  background: var(--charcoal);
+}
+
+.temoignage__text {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--warm-white);
+  margin-bottom: 1.5rem;
+}
+
+.temoignage__author strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.temoignage__author span {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* ==============================================
+   CONTACT / RESERVATION
+   ============================================== */
+.contact {
+  background: var(--charcoal);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.contact__block {
+  margin-bottom: 2rem;
+}
+
+.contact__block h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.contact__block p {
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.contact__block a {
+  color: var(--text);
+}
+
+.contact__block a:hover {
+  color: var(--gold);
+}
+
+.contact__closed {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+/* ---------- FORM ---------- */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form__group label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.form__group input,
+.form__group textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--warm-white);
+  background: var(--black);
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  padding: 0.9rem 1rem;
+  outline: none;
+  transition: border-color 0.3s var(--ease);
+}
+
+.form__group input::placeholder,
+.form__group textarea::placeholder {
+  color: var(--text-dim);
+  font-weight: 300;
+}
+
+.form__group input:focus,
+.form__group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form__group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ==============================================
+   FOOTER
+   ============================================== */
+.footer {
+  padding: 3rem 0;
+  border-top: 1px solid rgba(201, 169, 110, 0.1);
+  background: var(--black);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer__logo {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-white);
+}
+
+.footer__brand p {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+.footer__brand strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.footer__social {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer__social a {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: color 0.3s var(--ease);
+}
+
+.footer__social a:hover {
+  color: var(--gold);
+}
+
+/* ==============================================
+   KEYFRAMES
+   ============================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scaleY(0.6);
+  }
+}
+
+/* ==============================================
+   RESPONSIVE — Tablet (768px+)
+   ============================================== */
+@media (min-width: 768px) {
+  .philosophie__grid {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+  }
+
+  .carte__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience__stats {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .experience__stat-divider {
+    width: 1px;
+    height: 60px;
+  }
+
+  .temoignages__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+  }
+
+  .footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* ==============================================
+   RESPONSIVE — Desktop (1024px+)
+   ============================================== */
+@media (min-width: 1024px) {
+  .section {
+    padding: 9rem 0;
+  }
+
+  .carte__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .carte__card {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem;
+  }
+
+  .carte__card-number {
+    font-size: 4rem;
+  }
+}
+
+/* ==============================================
+   RESPONSIVE — Mobile (<768px)
+   ============================================== */
+@media (max-width: 767px) {
+  /* Mobile navigation */
+  .nav__burger {
+    display: flex;
+  }
+
+  .nav__links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.97);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    transform: translateX(100%);
+    transition: transform 0.4s var(--ease-out);
+  }
+
+  .nav__links.open {
+    transform: translateX(0);
+  }
+
+  .nav__links a {
+    font-size: 1rem;
+    color: var(--warm-white);
+  }
+
+  /* Smaller spacing on mobile */
+  .section {
+    padding: 5rem 0;
+  }
+
+  .carte__card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .philosophie__aside {
+    border-left: none;
+    border-top: 1px solid var(--gold);
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+}

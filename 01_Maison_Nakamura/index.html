@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maison Nakamura — Restaurant japonais gastronomique au coeur de Paris. L'art de la cuisine japonaise, une etoile Michelin.">
+  <title>Maison Nakamura — Restaurant Japonais Gastronomique Paris</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+  ============================================= -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">Nakamura</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#philosophie">Philosophie</a>
+        <a href="#carte">La Carte</a>
+        <a href="#experience">Experience</a>
+        <a href="#temoignages">Temoignages</a>
+        <a href="#contact">Reservation</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================
+       HERO
+  ============================================= -->
+  <section class="hero" id="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__kanji" aria-hidden="true">中村</p>
+      <h1 class="hero__title">Maison Nakamura</h1>
+      <p class="hero__tagline">L'art de la cuisine japonaise a Paris</p>
+      <a href="#contact" class="btn btn--primary">Reserver une table</a>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Decouvrir</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PHILOSOPHIE
+  ============================================= -->
+  <section class="section philosophie" id="philosophie">
+    <div class="container">
+      <div class="section__label">01 &mdash; Notre philosophie</div>
+      <div class="philosophie__grid">
+        <div class="philosophie__text reveal">
+          <h2>La tradition au service de la modernite</h2>
+          <p>
+            Le Chef Kenji Nakamura, forme dans les plus grandes maisons de Tokyo et de Kyoto,
+            a choisi Paris pour exprimer sa vision singuliere de la gastronomie japonaise.
+            Chaque assiette est une oeuvre ephemere ou se rencontrent la rigueur des techniques
+            ancestrales et l'audace de la creation contemporaine.
+          </p>
+          <p>
+            Ici, le respect du produit est absolu. Nos ingredients sont selectionnes avec une
+            exigence sans compromis &mdash; poissons de la criee de Tsukiji, legumes de
+            maraîchers d'Île-de-France, condiments artisanaux. Le resultat : une cuisine
+            d'emotion, precise et vivante.
+          </p>
+        </div>
+        <div class="philosophie__aside reveal">
+          <blockquote class="philosophie__quote">
+            &laquo; Cuisiner, c'est traduire l'invisible en saveur. &raquo;
+          </blockquote>
+          <cite>Chef Kenji Nakamura</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       LA CARTE
+  ============================================= -->
+  <section class="section carte" id="carte">
+    <div class="container">
+      <div class="section__label">02 &mdash; La carte</div>
+      <h2 class="section__title reveal">Nos signatures</h2>
+      <p class="section__subtitle reveal">
+        Le menu omakase evolue au rythme des saisons. Voici trois creations emblematiques du Chef.
+      </p>
+
+      <div class="carte__grid">
+        <!-- Dish 1 -->
+        <article class="carte__card reveal">
+          <div class="carte__card-number">01</div>
+          <div class="carte__card-content">
+            <h3 class="carte__dish-name">Otoro no Yugen</h3>
+            <p class="carte__dish-sub">Ventre de thon rouge, gel de yuzu, feuille d'or</p>
+            <p class="carte__dish-desc">
+              Le otoro, partie la plus precieuse du thon, est delicatement tranche et sublime
+              par un gel de yuzu acidule. Une feuille d'or vient couronner cette piece d'exception.
+            </p>
+            <div class="carte__price">48 &euro;</div>
+          </div>
+        </article>
+
+        <!-- Dish 2 -->
+        <article class="carte__card reveal">
+          <div class="carte__card-number">02</div>
+          <div class="carte__card-content">
+            <h3 class="carte__dish-name">Kanpachi Sakura</h3>
+            <p class="carte__dish-sub">Seriole ambree, emulsion de fleur de cerisier, shiso</p>
+            <p class="carte__dish-desc">
+              Un hommage au printemps japonais. La seriole ambree, d'une fraicheur incomparable,
+              est accompagnee d'une emulsion delicate de sakura et de feuilles de shiso pourpre.
+            </p>
+            <div class="carte__price">42 &euro;</div>
+          </div>
+        </article>
+
+        <!-- Dish 3 -->
+        <article class="carte__card reveal">
+          <div class="carte__card-number">03</div>
+          <div class="carte__card-content">
+            <h3 class="carte__dish-name">Wagyu Kurobi</h3>
+            <p class="carte__dish-sub">Boeuf wagyu A5 grille au binchotan, miso vieilli 3 ans</p>
+            <p class="carte__dish-desc">
+              Le wagyu A5 de la prefecture de Miyazaki, grille sur charbon de binchotan,
+              est nappe d'une sauce au miso hatcho vieilli trois ans. Intensite et delicatesse.
+            </p>
+            <div class="carte__price">68 &euro;</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="carte__footer reveal">
+        <p>Menu Omakase complet &mdash; <strong>180 &euro;</strong> par personne</p>
+        <p class="carte__note">Accord mets &amp; sake disponible sur demande</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       EXPERIENCE
+  ============================================= -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section__label">03 &mdash; L'experience</div>
+      <h2 class="section__title reveal">Un lieu hors du temps</h2>
+      <p class="section__subtitle reveal">
+        Pousser la porte de Maison Nakamura, c'est quitter Paris pour un voyage sensoriel
+        entre le Japon et la France. Boiseries sombres, comptoir en hinoki, lumiere tamisee
+        &mdash; chaque detail a ete pense pour sublimer l'instant.
+      </p>
+
+      <div class="experience__stats">
+        <div class="experience__stat reveal">
+          <span class="experience__stat-number">2018</span>
+          <span class="experience__stat-label">Annee de creation</span>
+        </div>
+        <div class="experience__stat-divider"></div>
+        <div class="experience__stat reveal">
+          <span class="experience__stat-number">1 &#9733;</span>
+          <span class="experience__stat-label">Etoile Michelin</span>
+        </div>
+        <div class="experience__stat-divider"></div>
+        <div class="experience__stat reveal">
+          <span class="experience__stat-number">28</span>
+          <span class="experience__stat-label">Couverts par soir</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TEMOIGNAGES
+  ============================================= -->
+  <section class="section temoignages" id="temoignages">
+    <div class="container">
+      <div class="section__label">04 &mdash; Temoignages</div>
+      <h2 class="section__title reveal">Ce qu'ils en disent</h2>
+
+      <div class="temoignages__grid">
+        <blockquote class="temoignage reveal">
+          <p class="temoignage__text">
+            &laquo; Un repas chez Nakamura, c'est une parenthese de grace. Chaque bouchee
+            raconte une histoire, chaque saveur est une revelation. On en ressort transforme. &raquo;
+          </p>
+          <footer class="temoignage__author">
+            <strong>Isabelle M.</strong>
+            <span>Journaliste gastronomique, Le Figaro</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="temoignage reveal">
+          <p class="temoignage__text">
+            &laquo; La precision du Chef Nakamura n'a d'egale que sa generosite. En huit
+            services, il m'a fait voyager de Osaka a Paris sans jamais quitter ma chaise.
+            Absolument magistral. &raquo;
+          </p>
+          <footer class="temoignage__author">
+            <strong>Philippe D.</strong>
+            <span>Critique culinaire independant</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT / RESERVATION
+  ============================================= -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section__label">05 &mdash; Reservation</div>
+      <h2 class="section__title reveal">Nous retrouver</h2>
+
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <div class="contact__block">
+            <h3>Adresse</h3>
+            <p>12 rue de l'Abbaye<br>75006 Paris, France</p>
+          </div>
+          <div class="contact__block">
+            <h3>Telephone</h3>
+            <p><a href="tel:+33142861234">+33 1 42 86 12 34</a></p>
+          </div>
+          <div class="contact__block">
+            <h3>Horaires</h3>
+            <p>
+              Mardi &mdash; Samedi<br>
+              Dejeuner : 12h00 &mdash; 14h00<br>
+              Diner : 19h00 &mdash; 22h00
+            </p>
+            <p class="contact__closed">Ferme le dimanche et le lundi</p>
+          </div>
+        </div>
+
+        <form class="contact__form reveal" action="#" method="post">
+          <div class="form__group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Votre nom">
+          </div>
+          <div class="form__group">
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="votre@email.com">
+          </div>
+          <div class="form__group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Nombre de convives, date souhaitee, allergies..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Envoyer la demande</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">Nakamura</span>
+        <p>&copy; 2026 Maison Nakamura &mdash; Site realise par <strong>Kairo</strong></p>
+      </div>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram" title="Instagram">&#9679; Instagram</a>
+        <a href="#" aria-label="Facebook" title="Facebook">&#9679; Facebook</a>
+        <a href="#" aria-label="TripAdvisor" title="TripAdvisor">&#9679; TripAdvisor</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       MINIMAL JS — nav scroll + reveal animation
+  ============================================= -->
+  <script>
+    // Solid nav on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--solid', window.scrollY > 60);
+    }, { passive: true });
+
+    // Mobile burger toggle
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Intersection Observer for reveal animations
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
