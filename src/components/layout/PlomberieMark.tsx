@@ -1,0 +1,35 @@
+/**
+ * Logo SVG custom — Plomberie Express
+ * Représente une clé à molette stylisée + goutte d'eau,
+ * tracée en deux couleurs métier (pétrole + cuivre).
+ */
+export function PlomberieMark({ size = 36 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className="shrink-0"
+    >
+      {/* Fond carré pétrole */}
+      <rect width="48" height="48" rx="6" fill="#0A2540" />
+
+      {/* Tube cuivre vertical */}
+      <rect x="20" y="10" width="8" height="22" rx="1" fill="#B87333" />
+      <rect x="18" y="10" width="12" height="3" rx="1" fill="#D4945C" />
+      <rect x="18" y="29" width="12" height="3" rx="1" fill="#D4945C" />
+
+      {/* Goutte d'eau */}
+      <path
+        d="M24 36 C 21 33, 19 30, 19 27 C 19 24, 21 22, 24 22 C 27 22, 29 24, 29 27 C 29 30, 27 33, 24 36 Z"
+        fill="#F5F1EA"
+        opacity="0.95"
+      />
+      {/* Reflet */}
+      <ellipse cx="22" cy="26" rx="1" ry="1.5" fill="#B87333" opacity="0.4" />
+    </svg>
+  );
+}
