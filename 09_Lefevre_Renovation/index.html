@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lefèvre Rénovation — Maquette portfolio artisan rénovation</title>
+  <meta name="description" content="Maquette portfolio pour un artisan en rénovation intérieure premium : direction artistique, storytelling local, preuves de confiance et parcours de demande de devis.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#221c14">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lefèvre Rénovation — Maquette portfolio">
+  <meta property="og:description" content="Concept de site vitrine premium pour un artisan rénovation : hero photo, réalisations avant/après, avis, zone locale et formulaire de devis.">
+  <meta property="og:image" content="https://images.pexels.com/photos/9976128/pexels-photo-9976128.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23b8643a'/%3E%3Cpath d='M6 17L16 8l10 9' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M9 15v9h14v-9' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="canonical" href="https://www.lefevre-renovation.fr/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       TOKENS CSS — Lefèvre Rénovation
+       ============================================================ */
+    :root {
+      --bg:           #f6f1ea;
+      --bg-alt:       #ede5d8;
+      --bg-dark:      #221c14;
+      --paper:        #fbf8f3;
+      --ink:          #221c14;
+      --ink-2:        #4a4035;
+      --muted:        #8a7e6e;
+      --line:         rgba(34,28,20,.10);
+      --accent:       #b8643a;
+      --accent-lt:    #d4895a;
+      --accent-deep:  #8e4a26;
+      --accent-soft:  #e9c9b3;
+      --border:       rgba(34,28,20,.10);
+      --border-dark:  rgba(255,255,255,0.1);
+      --surface:      #fbf8f3;
+
+      --fd: 'Cormorant Garamond', Georgia, serif;
+      --fb: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+      --fm: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+      --radius-sm:   4px;
+      --radius-md:   14px;
+      --radius-lg:   18px;
+      --radius-pill: 999px;
+
+      --shadow-sm: 0 1px 2px rgba(34,28,20,.06), 0 2px 6px rgba(34,28,20,.05);
+      --shadow-md: 0 4px 12px rgba(34,28,20,.08), 0 16px 40px rgba(34,28,20,.08);
+
+      --ease-out:    cubic-bezier(0.32, 0.72, 0, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 15px; }
+
+    body {
+      font-family: var(--fb);
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: var(--fb); cursor: pointer; border: none; background: none; }
+    h1, h2, h3, h4 { margin: 0; font-family: var(--fd); font-weight: 500; letter-spacing: -.005em; color: var(--ink); }
+    p { margin: 0; }
+
+    /* ============================================================
+       GRAIN OVERLAY
+       ============================================================ */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    /* ============================================================
+       UTILITAIRES
+       ============================================================ */
+    .container {
+      max-width: 1280px;
+      margin-inline: auto;
+      padding-inline: clamp(1.25rem, 5vw, 3.5rem);
+    }
+
+    .label-section {
+      font-family: var(--fm);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.875rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+    .reveal-d4 { transition-delay: 0.32s; }
+    .reveal-d5 { transition-delay: 0.40s; }
+
+    /* ============================================================
+       NAV STICKY
+       ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 90;
+      background: rgba(246,241,234,.78);
+      backdrop-filter: saturate(160%) blur(14px);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s, background .25s;
+    }
+
+    .nav.scrolled {
+      border-bottom-color: var(--line);
+      background: rgba(246,241,234,.93);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 2rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+    .nav-brand-mark svg { width: 20px; height: 20px; }
+
+    .nav-logo {
+      font-family: var(--fd);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .nav-logo em { font-style: italic; color: var(--accent); font-weight: 500; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink-2);
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 50%; bottom: -2px;
+      width: 0; height: 1.5px;
+      background: var(--accent);
+      transition: width .25s, left .25s;
+    }
+    .nav-links a:hover::after { width: 100%; left: 0; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.7rem 1.375rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 1px 0 rgba(255,255,255,.2) inset, var(--shadow-sm);
+      transition: background 0.25s var(--ease-out), transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--accent-deep); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .nav-cta:active { transform: scale(0.98); }
+    .nav-cta .arr { transition: transform 0.2s; }
+    .nav-cta:hover .arr { transform: translateX(3px); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 2.5rem; height: 2.5rem;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    .nav-hamburger span {
+      display: block;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.35s var(--ease-out), opacity 0.25s;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .nav-mobile {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(246,241,234,.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 89;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--fd);
+      font-size: clamp(2rem, 6vw, 3rem);
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+    .nav-mobile a:hover { color: var(--accent); }
+
+    /* ============================================================
+       HERO — plein écran, photo de réalisation
+       ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(3rem, 6vw, 5rem);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0; z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(34,28,20,0.15) 0%,
+        rgba(34,28,20,0.05) 30%,
+        rgba(34,28,20,0.65) 70%,
+        rgba(34,28,20,0.88) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--fm);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius-pill);
+      background: rgba(34,28,20,0.3);
+      backdrop-filter: blur(6px);
+      margin-bottom: 1.75rem;
+    }
+    .hero-label .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-lt);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: var(--fd);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 500;
+      line-height: 1.02;
+      color: #fff;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em { font-style: italic; color: var(--accent-lt); font-weight: 500; }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .hero-disclaimer {
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      font-size: 0.78rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.58);
+    }
+
+    .hero-disclaimer strong {
+      color: rgba(255,255,255,0.82);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 1px 0 rgba(255,255,255,.2) inset, var(--shadow-sm);
+      transition: background 0.25s var(--ease-out), transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-primary .arr { transition: transform 0.2s; }
+    .btn-primary:hover .arr { transform: translateX(3px); }
+
+    .btn-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.75rem; height: 1.75rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover .btn-arrow { background: rgba(255,255,255,0.3); transform: translate(2px, -2px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      padding: 0.875rem 1.375rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(4px);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,.6); background: rgba(255,255,255,.15); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      right: clamp(1.25rem, 5vw, 4rem);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.5);
+      font-family: var(--fm);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px; height: 2.5rem;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 0.9; transform: scaleY(1.1); }
+    }
+
+    /* ============================================================
+       TRUST BAND
+       ============================================================ */
+    .trust-band {
+      background: var(--bg-dark);
+    }
+
+    .trust-inner {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.75rem 1.5rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .trust-item:last-child { border-right: 0; }
+
+    .trust-icon {
+      width: 44px; height: 44px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent-lt);
+    }
+
+    .trust-label {
+      font-family: var(--fm);
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .trust-value {
+      font-family: var(--fd);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    /* ============================================================
+       EXPERTISES
+       ============================================================ */
+    .expertises {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: var(--bg);
+    }
+
+    .section-header { margin-bottom: clamp(3rem, 6vw, 5rem); }
+
+    .section-title {
+      font-family: var(--fd);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-top: 0.5rem;
+    }
+    .section-title em { font-style: italic; color: var(--accent); }
+
+    .expertises-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 3rem;
+      align-items: stretch;
+    }
+
+    .expertises-visual {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .expertises-visual img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    .expertises-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25rem;
+    }
+
+    .expertise-card {
+      grid-column: span 4;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+    }
+    .expertise-card:nth-child(1) { grid-column: span 5; }
+    .expertise-card:nth-child(5) { grid-column: span 5; }
+    .expertise-card:nth-child(3) { grid-column: span 4; }
+    .expertise-card:nth-child(4) { grid-column: span 4; }
+
+    .expertise-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+    /* Photo thumbnails */
+    .expertise-thumb {
+      aspect-ratio: 16/7;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .expertise-thumb::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(34,28,20,.04) 0%, rgba(34,28,20,.58) 100%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 2px, transparent 2px 16px);
+    }
+    .et-platrerie { background-image: url("https://images.pexels.com/photos/5691639/pexels-photo-5691639.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+    .et-sols      { background-image: url("https://images.pexels.com/photos/4263067/pexels-photo-4263067.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+    .et-energie   { background-image: url("https://images.pexels.com/photos/15798784/pexels-photo-15798784.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+    .et-bain      { background-image: url("https://images.pexels.com/photos/19227244/pexels-photo-19227244.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+    .et-complet   { background-image: url("https://images.pexels.com/photos/19503382/pexels-photo-19503382.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+
+    .expertise-thumb-lbl {
+      position: absolute;
+      left: 12px; bottom: 10px;
+      font-family: var(--fm);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.9);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(34,28,20,.45);
+      backdrop-filter: blur(6px);
+    }
+
+    .expertise-body {
+      padding: 1.5rem 1.75rem 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .expertise-icon {
+      width: 2.75rem; height: 2.75rem;
+      border-radius: var(--radius-sm);
+      background: rgba(184,100,58,0.1);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      transition: background 0.3s;
+    }
+    .expertise-card:hover .expertise-icon { background: var(--accent); color: #fff; }
+
+    .expertise-name {
+      font-family: var(--fd);
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .expertise-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .expertise-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.78rem;
+      margin-top: 1rem;
+      transition: gap 0.2s;
+    }
+    .expertise-card:hover .expertise-more { gap: 10px; }
+
+    /* ============================================================
+       REALISATIONS
+       ============================================================ */
+    .realisations {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: var(--bg-alt);
+    }
+
+    .realisations-grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .project-card:nth-child(even) { direction: rtl; }
+    .project-card:nth-child(even) > * { direction: ltr; }
+
+    .comparison-slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      aspect-ratio: 4/5;
+      cursor: col-resize;
+      user-select: none;
+      touch-action: pan-y;
+      --split: 50%;
+    }
+
+    .cs-before, .cs-after { position: absolute; inset: 0; }
+    .cs-before img, .cs-after img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; display: block; }
+    .cs-after { clip-path: inset(0 0 0 var(--split)); transition: clip-path 0s; }
+    .cs-handle {
+      position: absolute; top: 0; bottom: 0; left: var(--split);
+      width: 2px; background: rgba(255,255,255,0.9);
+      transform: translateX(-50%); pointer-events: none; will-change: left;
+    }
+    .cs-circle {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px; height: 44px;
+      background: #fff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      gap: 4px; box-shadow: 0 2px 16px rgba(0,0,0,0.28); color: #222;
+    }
+
+    .photo-badge {
+      position: absolute; top: 0.75rem; left: 0.75rem;
+      background: rgba(34,28,20,0.7); color: #fff;
+      font-family: var(--fm); font-size: 0.6rem; font-weight: 400;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-pill);
+      backdrop-filter: blur(8px); z-index: 1;
+    }
+    .photo-badge.after { background: var(--accent); left: auto; right: 0.75rem; }
+
+    .project-info {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .project-number {
+      font-family: var(--fm); font-size: 0.65rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1rem;
+    }
+    .project-title {
+      font-family: var(--fd); font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 500; line-height: 1.15; color: var(--ink); margin-bottom: 0.75rem;
+    }
+    .project-location {
+      display: flex; align-items: center; gap: 0.375rem;
+      font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem;
+    }
+    .project-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+
+    /* ============================================================
+       AVIS CLIENTS
+       ============================================================ */
+    .avis {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: var(--bg);
+    }
+
+    .avis-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+
+    .google-badge {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--paper); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 1rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .google-badge-score { font-family: var(--fd); font-size: 2.5rem; font-weight: 500; color: var(--ink); line-height: 1; }
+    .google-badge-info { display: flex; flex-direction: column; gap: 0.2rem; }
+    .stars { display: flex; gap: 2px; color: #F5A623; }
+    .google-badge-count { font-size: 0.78rem; color: var(--muted); }
+
+    .avis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+    .avis-card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.25s var(--ease-out), box-shadow 0.25s;
+    }
+    .avis-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .avis-card-inner { padding: 2rem; }
+
+    .avis-stars { display: flex; gap: 2px; color: #F5A623; margin-bottom: 1.25rem; }
+
+    .avis-text {
+      font-family: var(--fd);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--ink-2);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    .avis-author { display: flex; align-items: center; gap: 0.875rem; }
+    .avis-avatar {
+      width: 2.5rem; height: 2.5rem;
+      border-radius: 50%;
+      background: rgba(184,100,58,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--fd); font-size: 1.1rem; font-weight: 500;
+      color: var(--accent); flex-shrink: 0;
+    }
+    .avis-name { font-weight: 600; font-size: 0.875rem; color: var(--ink); }
+    .avis-date { font-size: 0.78rem; color: var(--muted); }
+
+    /* ============================================================
+       ZONE D'INTERVENTION
+       ============================================================ */
+    .zone {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: var(--bg-alt);
+    }
+
+    .zone-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem); align-items: center;
+    }
+
+    .zone-map {
+      position: relative; border-radius: var(--radius-lg);
+      overflow: hidden; aspect-ratio: 4/3; background: var(--ink);
+    }
+    .zone-map img { width: 100%; height: 100%; object-fit: cover; opacity: 0.75; }
+
+    .zone-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+    .zone-list li {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 1rem; color: var(--ink-2);
+    }
+    .zone-list li::before {
+      content: ''; display: block;
+      width: 6px; height: 6px;
+      border-radius: 50%; background: var(--accent); flex-shrink: 0;
+    }
+
+    .zone-note {
+      margin-top: 1.75rem; padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--accent);
+      background: rgba(184,100,58,0.06);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.875rem; color: var(--muted); line-height: 1.6;
+    }
+
+    /* ============================================================
+       CTA MILIEU — fond sombre, 2 colonnes
+       ============================================================ */
+    .cta-mid {
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-mid-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: stretch;
+      min-height: 560px;
+      max-width: 1280px;
+      margin-inline: auto;
+    }
+
+    .cta-mid-copy {
+      padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem);
+      position: relative;
+      z-index: 1;
+    }
+    .cta-mid-copy::before {
+      content: '';
+      position: absolute;
+      top: -30%; left: -10%;
+      width: 60vw; height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,100,58,.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-mid-title {
+      font-family: var(--fd);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: #fff;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+    .cta-mid-title em { font-style: italic; color: var(--accent-lt); }
+
+    .cta-mid-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+      max-width: 42ch;
+    }
+
+    .btn-cta-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--fb);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.9rem 1.75rem;
+      border-radius: var(--radius-pill);
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow-md);
+    }
+    .btn-cta-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.3); }
+    .btn-cta-dark .arr { transition: transform 0.2s; }
+    .btn-cta-dark:hover .arr { transform: translateX(3px); }
+
+    .cta-mid-image {
+      position: relative;
+      align-self: stretch;
+      background:
+        linear-gradient(180deg, rgba(34,28,20,0) 50%, rgba(34,28,20,.6) 100%),
+        linear-gradient(90deg, rgba(34,28,20,.5) 0%, rgba(34,28,20,0) 25%),
+        radial-gradient(ellipse at 60% 40%, rgba(255,210,160,.35), transparent 60%),
+        url("https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg?auto=compress&cs=tinysrgb&w=1200");
+      background-size: cover;
+      background-position: center;
+      border-left: 1px solid rgba(255,255,255,.05);
+    }
+    .cta-mid-image::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(135deg, rgba(255,255,255,.03) 0 2px, transparent 2px 18px);
+    }
+    .cta-mid-image-tag {
+      position: absolute;
+      left: 20px; bottom: 20px;
+      font-family: var(--fm);
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,.85);
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(34,28,20,.45);
+      backdrop-filter: blur(6px);
+      z-index: 1;
+    }
+
+    /* ============================================================
+       A PROPOS
+       ============================================================ */
+    .apropos {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: var(--bg);
+    }
+
+    .apropos-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem); align-items: center;
+    }
+
+    .apropos-photo { position: relative; }
+    .apropos-photo-frame {
+      position: relative; border-radius: var(--radius-lg);
+      overflow: hidden; aspect-ratio: 3/4;
+    }
+    .apropos-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+    .apropos-badge {
+      position: absolute; bottom: 1.5rem; right: -1.5rem;
+      background: var(--accent); color: #fff;
+      border-radius: var(--radius-md); padding: 1.25rem 1.5rem;
+      font-family: var(--fd); font-size: 1.1rem; font-weight: 500;
+      text-align: center; line-height: 1.3;
+      box-shadow: 0 8px 32px rgba(184,100,58,0.35);
+    }
+    .apropos-badge small {
+      display: block; font-family: var(--fb); font-size: 0.65rem;
+      font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      opacity: 0.8; margin-bottom: 0.2rem;
+    }
+
+    .apropos-quote {
+      font-family: var(--fd); font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      font-style: italic; line-height: 1.4; color: var(--ink);
+      margin-bottom: 1.75rem; padding-left: 1.5rem;
+      border-left: 3px solid var(--accent);
+    }
+    .apropos-text { font-size: 0.9375rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+
+    .certs-row { display: flex; align-items: center; gap: 0.875rem; margin-top: 2rem; flex-wrap: wrap; }
+    .cert-badge {
+      display: flex; align-items: center; gap: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8rem; font-weight: 500;
+      color: var(--ink-2); background: var(--paper);
+    }
+    .cert-badge svg { color: var(--accent); }
+
+    /* ============================================================
+       FORMULAIRE DEVIS
+       ============================================================ */
+    .devis {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: var(--bg-alt);
+      scroll-margin-top: 5rem;
+    }
+
+    .devis-inner {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: clamp(3rem, 6vw, 6rem); align-items: start;
+    }
+
+    .devis-meta { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+    .devis-meta-item { display: flex; align-items: flex-start; gap: 0.875rem; }
+    .devis-meta-icon {
+      width: 2.5rem; height: 2.5rem;
+      border-radius: var(--radius-md);
+      background: rgba(184,100,58,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); flex-shrink: 0;
+    }
+    .devis-meta-text strong { display: block; font-size: 0.875rem; font-weight: 600; color: var(--ink); margin-bottom: 0.15rem; }
+    .devis-meta-text span { font-size: 0.85rem; color: var(--muted); }
+
+    .devis-form-wrap {
+      background: rgba(34,28,20,0.04);
+      border: 1px solid var(--border);
+      padding: 2px; border-radius: var(--radius-lg);
+    }
+    .devis-form-inner {
+      background: var(--paper);
+      border-radius: calc(var(--radius-lg) - 2px);
+      padding: clamp(2rem, 4vw, 2.75rem);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.8);
+    }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .form-full { grid-column: 1 / -1; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; color: var(--ink-2); }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: var(--fb); font-size: 0.9375rem; color: var(--ink);
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 0.75rem 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none; width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(184,100,58,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 8rem; }
+
+    .form-note {
+      grid-column: 1 / -1; font-size: 0.8rem; color: var(--muted);
+      background: rgba(184,100,58,0.06); border-left: 2px solid var(--accent);
+      padding: 0.625rem 0.875rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 0.25rem;
+    }
+
+    .form-status {
+      grid-column: 1 / -1;
+      min-height: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--accent-deep);
+    }
+
+    .form-submit {
+      grid-column: 1 / -1;
+      display: inline-flex; align-items: center;
+      justify-content: center; gap: 0.625rem; width: 100%;
+      background: var(--ink); color: #fff;
+      font-family: var(--fb); font-size: 0.9375rem; font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-pill);
+      transition: background 0.25s var(--ease-out), transform 0.2s;
+      cursor: pointer; border: none; margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--accent); transform: translateY(-2px); }
+    .form-submit:active { transform: scale(0.98); }
+    .form-submit:disabled { cursor: progress; transform: none; }
+
+    .devis-map { margin-top: 2rem; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); height: 220px; }
+    .devis-map iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--bg-dark);
+      padding: clamp(4rem, 8vw, 6rem) 0 2rem;
+    }
+
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
+
+    .footer-logo { font-family: var(--fd); font-size: 1.5rem; font-weight: 500; color: #fff; margin-bottom: 0.875rem; }
+    .footer-logo span { color: var(--accent-lt); }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.45); line-height: 1.65; max-width: 280px; margin-bottom: 1.5rem; }
+    .footer-contact-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-bottom: 0.5rem; }
+    .footer-contact-item svg { color: var(--accent-lt); flex-shrink: 0; }
+
+    .footer-col-title { font-family: var(--fm); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem; }
+
+    .footer-nav-list { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+    .footer-nav-list a { font-size: 0.875rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer-nav-list a:hover { color: var(--accent-lt); }
+
+    .footer-certs { display: flex; flex-direction: column; gap: 0.875rem; }
+    .footer-cert { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.55); }
+    .footer-cert-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-lt); flex-shrink: 0; }
+
+    .footer-bottom {
+      padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .footer-copyright { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { font-size: 0.8rem; color: rgba(255,255,255,0.3); transition: color 0.2s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+    .kairo-credit { font-size: 0.75rem; color: rgba(255,255,255,0.2); display: flex; align-items: center; gap: 0.35rem; }
+    .kairo-credit strong { color: rgba(255,255,255,0.4); }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 960px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero-title { font-size: clamp(2.75rem, 10vw, 4rem); }
+      .hero-scroll { display: none; }
+
+      .trust-inner { grid-template-columns: repeat(2, 1fr); }
+      .trust-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .trust-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.07); }
+
+      .expertises-layout { grid-template-columns: 1fr; }
+      .expertises-visual { display: none; }
+      .expertises-grid { grid-template-columns: 1fr 1fr; }
+      .expertise-card,
+      .expertise-card:nth-child(1),
+      .expertise-card:nth-child(3),
+      .expertise-card:nth-child(4),
+      .expertise-card:nth-child(5) { grid-column: span 1; }
+
+      .project-card,
+      .project-card:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
+
+      .avis-grid { grid-template-columns: 1fr; }
+      .zone-inner { grid-template-columns: 1fr; }
+      .apropos-inner { grid-template-columns: 1fr; }
+      .apropos-badge { right: 1rem; }
+
+      .cta-mid-grid { grid-template-columns: 1fr; }
+      .cta-mid-image { display: none; }
+
+      .devis-inner { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-full { grid-column: span 1; }
+      .form-note { grid-column: span 1; }
+      .form-submit { grid-column: span 1; }
+
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    }
+
+    @media (max-width: 640px) {
+      .expertises-grid { grid-template-columns: 1fr; }
+      .trust-inner { grid-template-columns: 1fr; }
+      .trust-item { border-right: 0 !important; }
+      .footer-top { grid-template-columns: 1fr; }
+      .avis-header { flex-direction: column; align-items: flex-start; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .scroll-line { animation: none; }
+      * { transition-duration: 0.01ms !important; }
+    }
+
+    /* ============================================================
+       PROCESS — Comment ça marche
+       ============================================================ */
+    .process {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: var(--bg-dark);
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: clamp(2.5rem, 5vw, 4rem);
+    }
+    .process-step {
+      padding: 2.5rem 2rem;
+      background: var(--bg-dark);
+    }
+    .process-num {
+      font-family: var(--fm);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      color: var(--accent-lt);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .process-title {
+      font-family: var(--fd);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .process-desc {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       BLOG TEASER
+       ============================================================ */
+    .blog-teaser {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: var(--bg);
+    }
+    .blog-teaser-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: clamp(3rem, 5vw, 4rem);
+    }
+    .blog-link-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      transition: gap 0.2s;
+      white-space: nowrap;
+    }
+    .blog-link-all:hover { gap: 10px; }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .blog-card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .blog-card-thumb {
+      aspect-ratio: 16/9;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .blog-card-cat {
+      position: absolute;
+      top: 0.75rem; left: 0.75rem;
+      font-family: var(--fm);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-pill);
+    }
+    .blog-card-body { padding: 1.5rem 1.75rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-date {
+      font-family: var(--fm);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.625rem;
+    }
+    .blog-card-title {
+      font-family: var(--fd);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      flex: 1;
+    }
+    .blog-card-excerpt { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+    @media (max-width: 960px) {
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-teaser-header { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .process-steps { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       INSTAGRAM
+       ============================================================ */
+    .instagram {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: var(--bg-alt);
+    }
+    .instagram-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .instagram-handle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+      transition: gap 0.2s;
+    }
+    .instagram-handle:hover { gap: 12px; }
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
+    }
+    .instagram-post {
+      aspect-ratio: 1;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+    }
+    .instagram-post::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(34,28,20,0);
+      transition: background 0.3s;
+    }
+    .instagram-post:hover::after {
+      background: rgba(184,100,58,0.35);
+    }
+    .instagram-post-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1;
+    }
+    .instagram-post:hover .instagram-post-icon { opacity: 1; }
+    .instagram-cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .btn-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ink);
+      color: #fff;
+      font-family: var(--fb);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.875rem 1.75rem;
+      border-radius: 999px;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-instagram:hover { background: var(--accent); transform: translateY(-2px); }
+    @media (max-width: 960px) {
+      .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+      .instagram-header { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    ::selection { background: var(--accent); color: #fff; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="./" class="nav-brand">
+          <span class="nav-brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 11.5 12 4l9 7.5"/>
+              <path d="M5 10v10h14V10"/>
+              <path d="M10 20v-6h4v6"/>
+            </svg>
+          </span>
+          <span class="nav-logo">Lefèvre <em>Rénovation</em></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="prestations/">Expertises</a></li>
+          <li><a href="realisations/">Réalisations</a></li>
+          <li><a href="#avis">Avis clients</a></li>
+          <li><a href="a-propos/">Notre histoire</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+
+        <a href="contact/" class="nav-cta">
+          Demander un devis
+          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+          </svg>
+        </a>
+
+        <button class="nav-hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menu mobile overlay -->
+  <div class="nav-mobile" id="navMobile" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+    <a href="prestations/" class="nav-mobile-link">Expertises</a>
+    <a href="realisations/" class="nav-mobile-link">Réalisations</a>
+    <a href="#avis" class="nav-mobile-link">Avis clients</a>
+    <a href="a-propos/" class="nav-mobile-link">Notre histoire</a>
+    <a href="blog/" class="nav-mobile-link">Blog</a>
+    <a href="contact/" class="nav-mobile-link" style="color: var(--accent);">Demander un devis</a>
+  </div>
+
+  <main>
+    <!-- HERO — plein écran, photo de réalisation -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img
+          src="https://images.pexels.com/photos/9976128/pexels-photo-9976128.jpeg?auto=compress&cs=tinysrgb&w=1800"
+          alt="Réalisation Lefèvre Rénovation — salon contemporain rénovation complète"
+          loading="eager"
+        >
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-label reveal">
+            <span class="dot"></span>
+            Artisan certifié RGE · Beaujolais
+          </div>
+          <h1 class="hero-title reveal reveal-d1">
+            Votre intérieur,<br>
+            <em>réinventé.</em>
+          </h1>
+          <p class="hero-subtitle reveal reveal-d2">
+            Rénovation intérieure haut de gamme — plâtrerie, peinture, sols, salles de bain. Chaque chantier piloté personnellement par Martin Lefèvre, artisan certifié RGE et Qualibat.
+          </p>
+          <div class="hero-actions reveal reveal-d3">
+            <a href="contact/" class="btn-primary">
+              Demander un devis
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+              </svg>
+            </a>
+            <a href="realisations/" class="btn-ghost">
+              Voir les réalisations
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="scroll-line" aria-hidden="true"></div>
+        <span>Découvrir</span>
+      </div>
+    </section>
+
+    <!-- TRUST BAND -->
+    <div class="trust-band" role="region" aria-label="Chiffres clés et certifications">
+      <div class="trust-inner">
+
+        <div class="trust-item reveal">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="trust-label">Avis Google</div>
+            <div class="trust-value">4,9 / 5 — 47 avis</div>
+          </div>
+        </div>
+
+        <div class="trust-item reveal reveal-d1">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9,12 11,14 15,10"/>
+            </svg>
+          </div>
+          <div>
+            <div class="trust-label">Certification</div>
+            <div class="trust-value">RGE Qualibat</div>
+          </div>
+        </div>
+
+        <div class="trust-item reveal reveal-d2">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <div>
+            <div class="trust-label">Projets éligibles</div>
+            <div class="trust-value">MaPrimeRénov'</div>
+          </div>
+        </div>
+
+        <div class="trust-item reveal reveal-d3">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <div>
+            <div class="trust-label">Équipe</div>
+            <div class="trust-value">5 artisans qualifiés</div>
+          </div>
+        </div>
+
+        <div class="trust-item reveal reveal-d4">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="trust-label">Budget minimum</div>
+            <div class="trust-value">À partir de 5 000 €</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EXPERTISES -->
+    <section class="expertises" id="expertises">
+      <div class="container">
+        <div class="expertises-layout">
+
+          <div class="expertises-left">
+            <div class="section-header">
+              <span class="label-section reveal">Nos savoir-faire</span>
+              <h2 class="section-title reveal reveal-d1">
+                Un artisan,<br>
+                <em>cinq expertises.</em>
+              </h2>
+            </div>
+
+            <div class="expertises-grid">
+
+              <!-- Plâtrerie & peinture -->
+              <a href="prestations/peinture-platrerie/" class="expertise-card reveal">
+                <div class="expertise-thumb et-platrerie">
+                  <span class="expertise-thumb-lbl">Finitions</span>
+                </div>
+                <div class="expertise-body">
+                  <div class="expertise-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                    </svg>
+                  </div>
+                  <h3 class="expertise-name">Plâtrerie &amp; peinture</h3>
+                  <p class="expertise-desc">Doublage, enduit, ragréage, peinture décorative. Finitions millimétriques pour des intérieurs nets et durables.</p>
+                  <span class="expertise-more">
+                    En savoir plus
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                  </span>
+                </div>
+              </a>
+
+              <!-- Sols -->
+              <a href="prestations/sols-parquet-carrelage/" class="expertise-card reveal reveal-d1">
+                <div class="expertise-thumb et-sols">
+                  <span class="expertise-thumb-lbl">Revêtements</span>
+                </div>
+                <div class="expertise-body">
+                  <div class="expertise-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <rect x="3" y="3" width="7" height="7" rx="1"/>
+                      <rect x="14" y="3" width="7" height="7" rx="1"/>
+                      <rect x="3" y="14" width="7" height="7" rx="1"/>
+                      <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                  </div>
+                  <h3 class="expertise-name">Sols</h3>
+                  <p class="expertise-desc">Parquet massif ou stratifié, carrelage grand format, béton ciré. Pose soignée, respect des délais de séchage.</p>
+                  <span class="expertise-more">
+                    En savoir plus
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                  </span>
+                </div>
+              </a>
+
+              <!-- Rénovation énergétique -->
+              <a href="prestations/renovation-energetique/" class="expertise-card reveal reveal-d2">
+                <div class="expertise-thumb et-energie">
+                  <span class="expertise-thumb-lbl">Isolation</span>
+                </div>
+                <div class="expertise-body">
+                  <div class="expertise-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                  </div>
+                  <h3 class="expertise-name">Rénovation énergétique</h3>
+                  <p class="expertise-desc">Isolation thermique, ITI/ITE, menuiseries certifiées. Dossiers MaPrimeRénov' gérés par nos soins.</p>
+                  <span class="expertise-more">
+                    En savoir plus
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                  </span>
+                </div>
+              </a>
+
+              <!-- Salle de bain -->
+              <a href="prestations/salle-de-bain/" class="expertise-card reveal reveal-d3">
+                <div class="expertise-thumb et-bain">
+                  <span class="expertise-thumb-lbl">Salle de bain</span>
+                </div>
+                <div class="expertise-body">
+                  <div class="expertise-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <path d="M4 12h16M4 12a8 8 0 0116 0M4 12V9a8 8 0 0116 0v3M4 12v4a1 1 0 001 1h14a1 1 0 001-1v-4"/>
+                    </svg>
+                  </div>
+                  <h3 class="expertise-name">Salle de bain</h3>
+                  <p class="expertise-desc">Rénovation complète ou partielle. Carrelage, pose de sanitaires, étanchéité, plomberie en coordination.</p>
+                  <span class="expertise-more">
+                    En savoir plus
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                  </span>
+                </div>
+              </a>
+
+              <!-- Rénovation complète -->
+              <a href="prestations/renovation-complete/" class="expertise-card reveal reveal-d4">
+                <div class="expertise-thumb et-complet">
+                  <span class="expertise-thumb-lbl">Clé en main</span>
+                </div>
+                <div class="expertise-body">
+                  <div class="expertise-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                      <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                  </div>
+                  <h3 class="expertise-name">Rénovation complète</h3>
+                  <p class="expertise-desc">Coordination tous corps d'état : un interlocuteur unique, du diagnostic à la livraison. Clé en main.</p>
+                  <span class="expertise-more">
+                    En savoir plus
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                  </span>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="expertises-visual reveal">
+            <img
+              src="img/Personnage Renovation.png"
+              alt="Artisan plâtrier au travail — Lefèvre Rénovation"
+              width="320"
+              height="480"
+              loading="lazy"
+            >
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- REALISATIONS -->
+    <section class="realisations" id="realisations">
+      <div class="container">
+        <div class="section-header">
+          <span class="label-section reveal">Avant / après — visuels de démonstration</span>
+          <h2 class="section-title reveal reveal-d1">
+            Chantiers <em>récents.</em>
+          </h2>
+        </div>
+
+        <div class="realisations-grid">
+
+          <article class="project-card">
+            <div class="comparison-slider reveal" data-cs>
+              <div class="cs-before">
+                <img src="https://images.pexels.com/photos/15798784/pexels-photo-15798784.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Salon avant rénovation — pièce ouverte en chantier" loading="lazy">
+                <span class="photo-badge">Avant</span>
+              </div>
+              <div class="cs-after">
+                <img src="https://images.pexels.com/photos/37153452/pexels-photo-37153452.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Salon après rénovation complète — espace contemporain avec parquet" loading="lazy">
+                <span class="photo-badge after">Après</span>
+              </div>
+              <div class="cs-handle" aria-hidden="true">
+                <div class="cs-circle">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="project-info reveal reveal-d1">
+              <p class="project-number">Projet 01</p>
+              <h3 class="project-title">Maison de maître — Rénovation complète</h3>
+              <p class="project-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Villefranche-sur-Saône
+              </p>
+              <p class="project-desc">Rénovation complète de 180 m² : plâtrerie, peinture, parquet chêne massif, salle de bain principale et couloir. Chantier de 6 semaines, livré en avance.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="comparison-slider reveal" data-cs>
+              <div class="cs-before">
+                <img src="https://images.pexels.com/photos/3615721/pexels-photo-3615721.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Salle de bain avant rénovation — matériaux et câbles en chantier" loading="lazy">
+                <span class="photo-badge">Avant</span>
+              </div>
+              <div class="cs-after">
+                <img src="https://images.pexels.com/photos/19227244/pexels-photo-19227244.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Salle de bain après rénovation — double vasque et douche vitrée" loading="lazy">
+                <span class="photo-badge after">Après</span>
+              </div>
+              <div class="cs-handle" aria-hidden="true">
+                <div class="cs-circle">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="project-info reveal reveal-d1">
+              <p class="project-number">Projet 02</p>
+              <h3 class="project-title">Salle de bain haut de gamme</h3>
+              <p class="project-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Belleville-en-Beaujolais
+              </p>
+              <p class="project-desc">Refonte totale 12 m² : carrelage grès émaillé grand format, douche à l'italienne, niche de douche, double vasque sur mesure. Coordination plombier incluse.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="comparison-slider reveal" data-cs>
+              <div class="cs-before">
+                <img src="https://images.pexels.com/photos/3616769/pexels-photo-3616769.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Combles avant isolation — pièce nue en rénovation" loading="lazy">
+                <span class="photo-badge">Avant</span>
+              </div>
+              <div class="cs-after">
+                <img src="https://images.pexels.com/photos/7745931/pexels-photo-7745931.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Combles après aménagement et isolation — chambre mansardée lumineuse" loading="lazy">
+                <span class="photo-badge after">Après</span>
+              </div>
+              <div class="cs-handle" aria-hidden="true">
+                <div class="cs-circle">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="project-info reveal reveal-d1">
+              <p class="project-number">Projet 03</p>
+              <h3 class="project-title">Isolation &amp; aménagement combles</h3>
+              <p class="project-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Mâcon, Saône-et-Loire
+              </p>
+              <p class="project-desc">Isolation thermique par l'intérieur, doublage combles perdus, création de chambre 22 m². Dossier MaPrimeRénov' géré intégralement par Lefèvre Rénovation.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div style="text-align:center; padding: 0 0 clamp(3rem,6vw,5rem);">
+      <a href="realisations/" style="display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-family:var(--fb);font-size:0.9375rem;font-weight:600;padding:0.875rem 1.75rem;border-radius:999px;text-decoration:none;transition:background .25s,transform .2s;" onmouseenter="this.style.background='var(--accent)';this.style.transform='translateY(-2px)'" onmouseleave="this.style.background='var(--ink)';this.style.transform=''">
+        Voir toutes nos réalisations
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <!-- AVIS CLIENTS -->
+    <section class="avis" id="avis">
+      <div class="container">
+        <div class="avis-header">
+          <div>
+            <span class="label-section reveal">Ce que disent nos clients</span>
+            <h2 class="section-title reveal reveal-d1">Avis <em>vérifiés.</em></h2>
+          </div>
+          <div class="google-badge reveal">
+            <div class="google-badge-score">4,9</div>
+            <div class="google-badge-info">
+              <div class="stars" aria-label="4,9 étoiles sur 5">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="google-badge-count">47 avis sur Google</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="avis-grid">
+
+          <div class="avis-card reveal">
+            <div class="avis-card-inner">
+              <div class="avis-stars" aria-label="5 étoiles sur 5">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote class="avis-text">
+                "Martin et son équipe ont rénové notre salon et notre cuisine. Les finitions sont impeccables, les délais respectés. Un vrai professionnel qui écoute et conseille sans jamais imposer ses choix."
+              </blockquote>
+              <div class="avis-author">
+                <div class="avis-avatar" aria-hidden="true">S</div>
+                <div>
+                  <p class="avis-name">Sophie Marchand</p>
+                  <p class="avis-date">Il y a 3 semaines</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="avis-card reveal reveal-d1">
+            <div class="avis-card-inner">
+              <div class="avis-stars" aria-label="5 étoiles sur 5">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote class="avis-text">
+                "Rénovation énergétique complète avec gestion du dossier MaPrimeRénov' incluse. C'est rare de trouver un artisan qui s'occupe de tout. Économies de chauffage visibles dès le premier hiver."
+              </blockquote>
+              <div class="avis-author">
+                <div class="avis-avatar" aria-hidden="true">T</div>
+                <div>
+                  <p class="avis-name">Thomas Renault</p>
+                  <p class="avis-date">Il y a 1 mois</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="avis-card reveal reveal-d2">
+            <div class="avis-card-inner">
+              <div class="avis-stars" aria-label="5 étoiles sur 5">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote class="avis-text">
+                "Notre salle de bain a été entièrement refaite en 10 jours chrono. Qualité de carrelage et de pose irréprochable. Martin est disponible, ponctuel et laisse le chantier propre chaque soir."
+              </blockquote>
+              <div class="avis-author">
+                <div class="avis-avatar" aria-hidden="true">C</div>
+                <div>
+                  <p class="avis-name">Claire Fontaine</p>
+                  <p class="avis-date">Il y a 2 mois</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section class="process" id="process">
+      <div class="container">
+        <span class="label-section reveal" style="color:rgba(255,255,255,0.4);">Notre méthode</span>
+        <h2 class="section-title reveal reveal-d1" style="color:#fff; margin-top:0.5rem;">
+          Du premier contact<br><em>à la livraison.</em>
+        </h2>
+        <div class="process-steps">
+          <div class="process-step reveal">
+            <span class="process-num">01 — Contact</span>
+            <h3 class="process-title">Échange téléphonique</h3>
+            <p class="process-desc">10 minutes pour qualifier votre projet : nature des travaux, surface, délais souhaités et faisabilité de notre intervention.</p>
+          </div>
+          <div class="process-step reveal reveal-d1">
+            <span class="process-num">02 — Visite</span>
+            <h3 class="process-title">Visite sur chantier</h3>
+            <p class="process-desc">Martin se déplace. Lecture des supports, contraintes techniques et discussion sur les niveaux de finition attendus.</p>
+          </div>
+          <div class="process-step reveal reveal-d2">
+            <span class="process-num">03 — Devis</span>
+            <h3 class="process-title">Devis détaillé sous 48h</h3>
+            <p class="process-desc">Chaque lot est chiffré séparément pour permettre des arbitrages. Budget total transparent, sans surprise en cours de chantier.</p>
+          </div>
+          <div class="process-step reveal reveal-d3">
+            <span class="process-num">04 — Livraison</span>
+            <h3 class="process-title">Chantier livré propre</h3>
+            <p class="process-desc">Un interlocuteur unique du premier jour à la remise des clés. Nettoyage inclus. Réserves levées avant départ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZONE D'INTERVENTION -->
+    <section class="zone" id="zone">
+      <div class="container">
+        <div class="zone-inner">
+
+          <div class="zone-map reveal">
+            <iframe
+              src="https://maps.google.com/maps?q=Villefranche-sur-Saone,France&output=embed&hl=fr&z=9"
+              title="Zone d'intervention Lefèvre Rénovation — Villefranche-sur-Saône et Beaujolais"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              style="width:100%;height:100%;border:none;display:block;"
+            ></iframe>
+          </div>
+
+          <div>
+            <span class="label-section reveal">Déplacements</span>
+            <h2 class="section-title reveal reveal-d1">
+              Zone<br><em>d'intervention.</em>
+            </h2>
+            <ul class="zone-list reveal reveal-d2" aria-label="Villes et territoires couverts">
+              <li>Villefranche-sur-Saône et agglomération</li>
+              <li>Beaujolais — Belleville, Mâcon, Cluny</li>
+              <li>Nord du Rhône — jusqu'à Lyon (30 km)</li>
+              <li>Saône-et-Loire — Tournus, Chalon</li>
+              <li>Ain — secteur Bourg-en-Bresse</li>
+            </ul>
+            <div class="zone-note reveal reveal-d3">
+              Pour les projets hors zone, nous étudions chaque demande. Contactez-nous pour vérifier la faisabilité selon votre adresse.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA MILIEU — 2 colonnes fond sombre -->
+    <section class="cta-mid">
+      <div class="cta-mid-grid">
+
+        <div class="cta-mid-copy">
+          <span class="label-section reveal" style="color: rgba(255,255,255,0.4);">Votre projet nous intéresse</span>
+          <h2 class="cta-mid-title reveal reveal-d1">
+            Chaque chantier<br>mérite une<br>
+            <em>attention absolue.</em>
+          </h2>
+          <p class="cta-mid-sub reveal reveal-d2">
+            Un interlocuteur unique, du premier rendez-vous à la livraison. Devis détaillé sous 48h.
+          </p>
+          <a href="contact/" class="btn-cta-dark reveal reveal-d3">
+            Demander un devis gratuit
+            <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="cta-mid-image">
+          <span class="cta-mid-image-tag">Chantier en cours — Villefranche-sur-Saône</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- A PROPOS -->
+    <section class="apropos" id="apropos">
+      <div class="container">
+        <div class="apropos-inner">
+
+          <div class="apropos-photo reveal">
+            <div class="apropos-photo-frame">
+              <img
+                src="https://images.pexels.com/photos/15200454/pexels-photo-15200454.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Portrait d'artisan — fondateur fictif de Lefèvre Rénovation"
+                loading="lazy"
+              >
+            </div>
+            <div class="apropos-badge">
+              <small>Fondé en</small>
+              2019
+            </div>
+          </div>
+
+          <div class="apropos-content">
+            <span class="label-section reveal">L'artisan derrière l'entreprise</span>
+            <h2 class="section-title reveal reveal-d1">
+              Martin<br><em>Lefèvre.</em>
+            </h2>
+
+            <blockquote class="apropos-quote reveal reveal-d2">
+              "Un beau chantier, c'est un client qui ouvre la porte et qui est fier de montrer son intérieur à ses amis."
+            </blockquote>
+
+            <p class="apropos-text reveal reveal-d3">
+              Compagnon du Tour de France, Martin Lefèvre a fondé Lefèvre Rénovation en 2019 après 12 ans comme chef d'équipe dans le bâtiment. Son exigence vient de là : pas de sous-traitance sur les postes clés, des matériaux sélectionnés pour durer, et une présence personnelle sur chaque chantier.
+            </p>
+            <p class="apropos-text reveal reveal-d3" style="transition-delay: 0.32s;">
+              Aujourd'hui, l'entreprise compte 5 artisans qualifiés et intervient sur des projets de rénovation complète, d'isolation thermique et d'aménagement de salle de bain. La certification RGE confirme l'engagement dans la rénovation énergétique responsable.
+            </p>
+
+            <div class="certs-row reveal reveal-d4">
+              <div class="cert-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10"/></svg>
+                RGE Qualibat
+              </div>
+              <div class="cert-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10"/></svg>
+                Qualibat 6112
+              </div>
+              <div class="cert-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                Depuis 2019
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULAIRE DE DEVIS -->
+    <section class="devis" id="devis">
+      <div class="container">
+        <div class="devis-inner">
+
+          <div class="devis-info">
+            <span class="label-section reveal">Votre projet</span>
+            <h2 class="section-title reveal reveal-d1">
+              Parlons de<br>votre <em>chantier.</em>
+            </h2>
+            <div class="devis-meta reveal reveal-d2">
+              <div class="devis-meta-item">
+                <div class="devis-meta-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.17 6.17l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+                </div>
+                <div class="devis-meta-text">
+                  <strong>Réponse sous 48h</strong>
+                  <span>Devis détaillé et gratuit</span>
+                </div>
+              </div>
+              <div class="devis-meta-item">
+                <div class="devis-meta-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div class="devis-meta-text">
+                  <strong>Visite sur site incluse</strong>
+                  <span>Pour tout projet &gt; 5 000 €</span>
+                </div>
+              </div>
+              <div class="devis-meta-item">
+                <div class="devis-meta-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="devis-meta-text">
+                  <strong>Accompagnement MaPrimeRénov'</strong>
+                  <span>Dossier géré par nos soins si éligible</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="devis-map reveal reveal-d3">
+              <iframe
+                src="https://maps.google.com/maps?q=Villefranche-sur-Saône,France&output=embed&hl=fr"
+                title="Localisation Lefèvre Rénovation — Villefranche-sur-Saône"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="devis-form-wrap reveal reveal-d1">
+            <div class="devis-form-inner">
+              <form id="devisForm" novalidate aria-describedby="formNotice formStatus">
+                <div class="form-grid">
+
+                  <div class="form-group">
+                    <label for="nom">Nom complet *</label>
+                    <input type="text" id="nom" name="nom" placeholder="Jean Dupont" autocomplete="name" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="jean@exemple.fr" autocomplete="email" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tel">Téléphone</label>
+                    <input type="tel" id="tel" name="tel" placeholder="06 00 00 00 00" autocomplete="tel">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="prestation">Type de prestation *</label>
+                    <select id="prestation" name="prestation" required>
+                      <option value="" disabled selected>Choisir...</option>
+                      <option value="platrerie-peinture">Plâtrerie &amp; peinture</option>
+                      <option value="sols">Sols (parquet / carrelage)</option>
+                      <option value="renovation-energetique">Rénovation énergétique</option>
+                      <option value="salle-de-bain">Salle de bain</option>
+                      <option value="renovation-complete">Rénovation complète</option>
+                      <option value="autre">Autre / Plusieurs prestations</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group form-full">
+                    <label for="description">Description du projet *</label>
+                    <textarea id="description" name="description" placeholder="Décrivez votre projet : surface, état actuel, objectifs souhaités..." required></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="budget">Budget envisagé *</label>
+                    <select id="budget" name="budget" required>
+                      <option value="" disabled selected>Fourchette...</option>
+                      <option value="5k-10k">5 000 € – 10 000 €</option>
+                      <option value="10k-30k">10 000 € – 30 000 €</option>
+                      <option value="30k+">30 000 € et plus</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="delais">Délais souhaités</label>
+                    <select id="delais" name="delais">
+                      <option value="" disabled selected>Quand ?</option>
+                      <option value="urgent">Dès que possible</option>
+                      <option value="1-3mois">Dans 1 à 3 mois</option>
+                      <option value="3-6mois">Dans 3 à 6 mois</option>
+                      <option value="6mois+">Dans plus de 6 mois</option>
+                    </select>
+                  </div>
+
+                  <p class="form-note" id="formNotice">
+                    Nous intervenons sur des projets à partir de 5 000 €. Vos données sont utilisées uniquement pour répondre à votre demande, conformément à notre politique de confidentialité.
+                  </p>
+
+                  <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+
+                  <button type="submit" class="form-submit">
+                    Envoyer ma demande de devis
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <line x1="22" y1="2" x2="11" y2="13"/>
+                      <polygon points="22,2 15,22 11,13 2,9"/>
+                    </svg>
+                  </button>
+
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG TEASER -->
+    <section class="blog-teaser" id="blog-teaser">
+      <div class="container">
+        <div class="blog-teaser-header">
+          <div>
+            <span class="label-section reveal">Conseils &amp; chantiers</span>
+            <h2 class="section-title reveal reveal-d1">
+              Le blog <em>Lefèvre.</em>
+            </h2>
+          </div>
+          <a href="blog/" class="blog-link-all reveal">
+            Tous les articles
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="blog-grid">
+          <a href="blog/" class="blog-card reveal">
+            <div class="blog-card-thumb" style="background-image:url('https://images.pexels.com/photos/7031706/pexels-photo-7031706.jpeg?auto=compress&cs=tinysrgb&w=900')">
+              <span class="blog-card-cat">MaPrimeRénov'</span>
+            </div>
+            <div class="blog-card-body">
+              <p class="blog-card-date">Mai 2026</p>
+              <h3 class="blog-card-title">Ce qui change pour MaPrimeRénov' en 2026 : ce que ça coûte vraiment</h3>
+              <p class="blog-card-excerpt">Montants, plafonds, conditions RGE : le point complet pour préparer votre dossier avant les travaux.</p>
+            </div>
+          </a>
+          <a href="blog/" class="blog-card reveal reveal-d1">
+            <div class="blog-card-thumb" style="background-image:url('https://images.pexels.com/photos/5691639/pexels-photo-5691639.jpeg?auto=compress&cs=tinysrgb&w=900')">
+              <span class="blog-card-cat">Conseils</span>
+            </div>
+            <div class="blog-card-body">
+              <p class="blog-card-date">Avril 2026</p>
+              <h3 class="blog-card-title">Rénovation d'une maison ancienne : dans quel ordre attaquer les travaux ?</h3>
+              <p class="blog-card-excerpt">Isolation, plâtrerie, sols, salle de bain : la séquence qui évite les reprises et les surcoûts.</p>
+            </div>
+          </a>
+          <a href="blog/" class="blog-card reveal reveal-d2">
+            <div class="blog-card-thumb" style="background-image:url('https://images.pexels.com/photos/19227244/pexels-photo-19227244.jpeg?auto=compress&cs=tinysrgb&w=900')">
+              <span class="blog-card-cat">Réalisation</span>
+            </div>
+            <div class="blog-card-body">
+              <p class="blog-card-date">Mars 2026</p>
+              <h3 class="blog-card-title">Salle de bain 12 m² à Belleville : de la dépose à la livraison en 10 jours</h3>
+              <p class="blog-card-excerpt">Carrelage grand format, douche à l'italienne, niche de douche : le détail complet d'un chantier réussi.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="instagram" id="instagram">
+      <div class="container">
+        <div class="instagram-header">
+          <div>
+            <span class="label-section reveal">Sur le terrain</span>
+            <h2 class="section-title reveal reveal-d1">
+              Les chantiers<br><em>en direct.</em>
+            </h2>
+          </div>
+          <a href="https://www.instagram.com/" class="instagram-handle reveal" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Suivre @lefevrerenovation
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="instagram-grid">
+
+          <div class="instagram-post reveal" style="background-image:url('https://images.pexels.com/photos/5691639/pexels-photo-5691639.jpeg?auto=compress&cs=tinysrgb&w=600')">
+            <span class="instagram-post-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </div>
+
+          <div class="instagram-post reveal reveal-d1" style="background-image:url('https://images.pexels.com/photos/19227244/pexels-photo-19227244.jpeg?auto=compress&cs=tinysrgb&w=600')">
+            <span class="instagram-post-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </div>
+
+          <div class="instagram-post reveal reveal-d2" style="background-image:url('https://images.pexels.com/photos/7745931/pexels-photo-7745931.jpeg?auto=compress&cs=tinysrgb&w=600')">
+            <span class="instagram-post-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </div>
+
+          <div class="instagram-post reveal reveal-d3" style="background-image:url('https://images.pexels.com/photos/4263067/pexels-photo-4263067.jpeg?auto=compress&cs=tinysrgb&w=600')">
+            <span class="instagram-post-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </div>
+
+          <div class="instagram-post reveal reveal-d4" style="background-image:url('https://images.pexels.com/photos/15798784/pexels-photo-15798784.jpeg?auto=compress&cs=tinysrgb&w=600')">
+            <span class="instagram-post-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </div>
+
+          <div class="instagram-post reveal reveal-d5" style="background-image:url('https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg?auto=compress&cs=tinysrgb&w=600')">
+            <span class="instagram-post-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </div>
+
+        </div>
+
+        <div class="instagram-cta reveal">
+          <a href="https://www.instagram.com/" class="btn-instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Voir tous les chantiers sur Instagram
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <p class="footer-logo">Lefèvre<span>&nbsp;</span>Rénovation</p>
+          <p class="footer-tagline">Artisan rénovation intérieure certifié RGE. Plâtrerie, peinture, sols, salle de bain. Nord du Rhône et Beaujolais.</p>
+          <p class="footer-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.17 6.17l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            06 12 34 56 78
+          </p>
+          <p class="footer-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            contact@lefevre-renovation.fr
+          </p>
+          <p class="footer-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Villefranche-sur-Saône (69400)
+          </p>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Navigation</p>
+          <ul class="footer-nav-list">
+            <li><a href="prestations/">Nos expertises</a></li>
+            <li><a href="realisations/">Réalisations</a></li>
+            <li><a href="#avis">Avis clients</a></li>
+            <li><a href="#zone">Zone d'intervention</a></li>
+            <li><a href="a-propos/">Notre histoire</a></li>
+            <li><a href="contact/">Demander un devis</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Prestations</p>
+          <ul class="footer-nav-list">
+            <li><a href="prestations/peinture-platrerie/">Plâtrerie &amp; peinture</a></li>
+            <li><a href="prestations/sols-parquet-carrelage/">Sols et revêtements</a></li>
+            <li><a href="prestations/renovation-energetique/">Rénovation énergétique</a></li>
+            <li><a href="prestations/salle-de-bain/">Salle de bain</a></li>
+            <li><a href="prestations/renovation-complete/">Rénovation complète</a></li>
+            <li><a href="prestations/renovation-energetique/">MaPrimeRénov'</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Signaux de confiance</p>
+          <div class="footer-certs">
+            <p class="footer-cert"><span class="footer-cert-dot" aria-hidden="true"></span>RGE — Reconnu Garant de l'Environnement</p>
+            <p class="footer-cert"><span class="footer-cert-dot" aria-hidden="true"></span>Qualibat 6112 — Travaux d'isolation</p>
+            <p class="footer-cert"><span class="footer-cert-dot" aria-hidden="true"></span>Assurance décennale en cours de validité</p>
+            <p class="footer-cert"><span class="footer-cert-dot" aria-hidden="true"></span>47 avis Google — moyenne 4,9 / 5</p>
+            <p class="footer-cert"><span class="footer-cert-dot" aria-hidden="true"></span>Entreprise fondée en 2019</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Lefèvre Rénovation — Tous droits réservés</p>
+        <nav class="footer-legal" aria-label="Liens légaux">
+          <a href="mentions-legales/">Mentions légales</a>
+          <a href="politique-confidentialite/">Confidentialité</a>
+        </nav>
+        <p class="kairo-credit">Créé par <strong>Kaïro</strong> — Design web Bordeaux</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Nav scroll state */
+    const nav = document.getElementById('nav');
+    const onScroll = () => { nav.classList.toggle('scrolled', window.scrollY > 60); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* Hamburger mobile */
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('navMobile');
+    let menuOpen = false;
+
+    const toggleMenu = () => {
+      menuOpen = !menuOpen;
+      hamburger.classList.toggle('open', menuOpen);
+      navMobile.classList.toggle('open', menuOpen);
+      hamburger.setAttribute('aria-expanded', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+    };
+
+    hamburger.addEventListener('click', toggleMenu);
+    navMobile.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { if (menuOpen) toggleMenu(); }));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menuOpen) toggleMenu(); });
+
+    /* Reveal on scroll */
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* Before/after sliders */
+    document.querySelectorAll('[data-cs]').forEach(slider => {
+      let active = false;
+      const move = (x) => {
+        const { left, width } = slider.getBoundingClientRect();
+        const pct = Math.min(Math.max(((x - left) / width) * 100, 2), 98);
+        slider.style.setProperty('--split', pct + '%');
+      };
+      slider.addEventListener('mousedown', (e) => { active = true; move(e.clientX); e.preventDefault(); });
+      slider.addEventListener('touchstart', (e) => { active = true; move(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('mousemove', (e) => { if (active) move(e.clientX); });
+      window.addEventListener('touchmove', (e) => { if (active) move(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('mouseup', () => { active = false; });
+      window.addEventListener('touchend', () => { active = false; });
+    });
+
+    /* Form validation */
+    const form = document.getElementById('devisForm');
+    const submitBtn = form.querySelector('.form-submit');
+    const formStatus = document.getElementById('formStatus');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const requiredFields = form.querySelectorAll('[required]');
+      let isValid = true;
+      requiredFields.forEach(field => {
+        field.style.borderColor = '';
+        if (!field.value.trim()) { field.style.borderColor = '#e5534b'; isValid = false; }
+      });
+      if (!isValid) {
+        formStatus.textContent = 'Complétez les champs obligatoires pour tester le parcours.';
+        return;
+      }
+
+      const originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Validation du prototype...';
+      submitBtn.style.opacity = '0.7';
+      formStatus.textContent = '';
+
+      setTimeout(() => {
+        submitBtn.innerHTML = 'Parcours validé — aucun message envoyé';
+        submitBtn.style.background = '#2A7A4A';
+        submitBtn.style.opacity = '1';
+        formStatus.textContent = 'Maquette portfolio : cette confirmation simule un envoi réel.';
+        setTimeout(() => {
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = '';
+          formStatus.textContent = '';
+        }, 5000);
+      }, 2000);
+    });
+
+    /* Hero reveals on load */
+    document.querySelectorAll('.hero .reveal').forEach(el => {
+      setTimeout(() => el.classList.add('visible'), 100);
+    });
+  </script>
+
+  <!-- Chatbot Lefèvre Rénovation — rule-based, aucun backend requis -->
+  <!-- Pour la version IA : remplacer par chatbot/chatbot-api.js -->
+  <script src="chatbot/chatbot-widget.js"></script>
+
+</body>
+</html>
